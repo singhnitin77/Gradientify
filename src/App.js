@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ReactDOM from "react-dom";
 import { Navbar, ScrollToTop, Hero } from "./components";
+import { Toaster } from "react-hot-toast";
 import { useGlobalContext } from "../src/context/Context";
 import {
   About,
@@ -24,6 +25,9 @@ const App = () => {
 
   return (
     <div className={`${darkMode && "dark"}`}>
+      <div>
+        <Toaster />
+      </div>
       <Router>
         {/* <ScrollToTop /> */}
         <Navbar />

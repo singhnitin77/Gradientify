@@ -272,6 +272,13 @@ const IndividualGradientPage = () => {
               style={{ background: `${gradient.colors[1]}` }}
             ></div>
           </Tooltip>
+          <Tooltip title={`Copy ${gradient.colors[2]}`}>
+            <div
+              className="font-medium w-[40px] h-[40px] rounded-[50%]"
+              onClick={() => copySingleColor(gradient.colors[2])}
+              style={{ background: `${gradient.colors[2]}` }}
+            ></div>
+          </Tooltip>
         </div>
         <div className="w-full overflow-hidden rounded-md h-40 mt-2">
           <CodeMirror

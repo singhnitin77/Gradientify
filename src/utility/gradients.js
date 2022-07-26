@@ -1,6 +1,6 @@
 export const gradients = [
   {
-    colors: ["#3CA55C", "#B5AC49"],
+    colors: ["#F86BDF", "#6B6BF8"],
     id: 1,
   },
 
@@ -32,5 +32,9 @@ export const gradients = [
   {
     colors: ["#8E0E00", "#1F1C18"],
     id: 7,
+  },
+  {
+    colors: ["#f64f59", "#c471ed", "#12c2e9"],
+    id: 8,
   },
 ];

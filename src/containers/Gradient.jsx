@@ -107,7 +107,7 @@ const Gradient = ({ gradient, align }) => {
         <div
           className="h-[220px] w-full rounded-t-[10px] flex items-start justify-end p-2 relative overflow-hidden"
           style={{
-            background: `linear-gradient(to ${align}, ${gradient.colors[0]}, ${gradient.colors[1]})`,
+            background: `linear-gradient(to ${align}, ${gradient.colors[0]}, ${gradient.colors[1]},${gradient.colors[2]})`,
           }}
         >
           {showCopyBg && (
@@ -165,6 +165,13 @@ const Gradient = ({ gradient, align }) => {
               className="text-md font-medium w-[22px] h-[22px] rounded-[50%]"
               onClick={() => copySingleColor(gradient.colors[1])}
               style={{ background: `${gradient.colors[1]}` }}
+            ></div>
+          </Tooltip>
+          <Tooltip title={`Copy ${gradient.colors[2]}`}>
+            <div
+              className="text-md font-medium w-[22px] h-[22px] rounded-[50%]"
+              onClick={() => copySingleColor(gradient.colors[2])}
+              style={{ background: `${gradient.colors[2]}` }}
             ></div>
           </Tooltip>
         </div>

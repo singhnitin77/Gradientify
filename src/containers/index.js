@@ -1,0 +1,13 @@
+export { default as Contributors } from "./Contributors";
+export { default as Features } from "./Features";
+export { default as About } from "./About";
+export { default as TintsandShades } from "./TintsandShades";
+export { default as Gradientgenerator } from "./Gradientgenerator";
+export { default as Newsletter } from "./Newsletter";
+export { default as Footer } from "./Footer";
+export { default as AllGradients } from "./AllGradients";
+export { default as Gradient } from "./Gradient";
+export { default as IndividualGradientPage } from "./IndividualGradientPage";
+export { default as SavedGradients } from "./SavedGradients";
+export { default as NewGradient } from "./NewGradient";
+export { default as ImageGradient } from "./ImageGradient";

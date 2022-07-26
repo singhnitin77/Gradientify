@@ -1,0 +1,333 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Text Gradients */
+
+/* Continuos animation */
+.continuous-line {
+  background: linear-gradient(currentColor 0 0) var(--d, 201%) 100% /200% 1.5px no-repeat;
+  transition: 0.5s;
+  width: fit-content;
+}
+
+.continuous-line:hover {
+  --d: -101%;
+}
+
+/* .bg-image {
+  background: url(../assets/background.png) center;
+  background-size: cover;
+} */
+
+/* Shine Button Animation */
+.shine {
+  position: relative;
+  overflow: hidden;
+  transition: all 100ms linear;
+}
+
+.shine::after {
+  content: "";
+  top: -50%;
+  display: block;
+  width: 40%;
+  height: 200%;
+  left: -55%;
+  background: rgba(255, 255, 255, 0.3);
+  position: absolute;
+  transform: rotate(25deg);
+  transition: 0.5s;
+}
+
+.shine:hover::after {
+  left: 120%;
+}
+
+/* Menu toggle animation */
+/* mobile menu toggle button */
+.menu-toggle span {
+  margin: 0 auto;
+  position: relative;
+  transition-duration: 0s;
+  transition-delay: 0.2s;
+  margin: 8px 0px;
+  transition: background-color 0.3s;
+}
+
+.menu-toggle span:before,
+.menu-toggle span:after {
+  position: absolute;
+  content: "";
+}
+
+.menu-toggle span,
+.menu-toggle span:before,
+.menu-toggle span:after {
+  width: 20px;
+  height: 2px;
+  background-color: #fff;
+  display: block;
+  opacity: 1;
+}
+
+.menu-toggle span:before {
+  margin-top: -6px;
+  transition-property: margin, transform;
+  transition-duration: 0.2s;
+  transition-delay: 0.2s, 0;
+}
+
+.menu-toggle span:after {
+  margin-top: 6px;
+  transition-property: margin, transform;
+  transition-duration: 0.2s;
+  transition-delay: 0.2s, 0;
+}
+
+.menu-toggle-active span {
+  background-color: rgba(0, 0, 0, 0);
+  transition: 0.3s background-color;
+}
+
+.menu-toggle-active span:before {
+  margin-top: 0;
+  transform: rotate(45deg);
+  transition-delay: 0, 0.2s;
+}
+
+.menu-toggle-active span:after {
+  margin-top: 0;
+  transform: rotate(-45deg);
+  transition-delay: 0, 0.2s;
+}
+
+.absolute-center {
+  top: 30%;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+}
+
+/* Loader */
+.spinner {
+  margin: 100px auto 0;
+  width: 270px;
+  text-align: center;
+}
+
+.spinner > div {
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(
+    287.43deg,
+    #764dff 33.27%,
+    #239eb9 61.72%,
+    #d73e87 82.93%
+  );
+  margin: 0 10px;
+  border-radius: 100%;
+  display: inline-block;
+  -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+  animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+
+.spinner .bounce1 {
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+
+.spinner .bounce2 {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+
+@-webkit-keyframes sk-bouncedelay {
+  0%,
+  80%,
+  100% {
+    -webkit-transform: scale(0);
+  }
+  40% {
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes sk-bouncedelay {
+  0%,
+  80%,
+  100% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  40% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+/* Loader Home */
+
+.loader {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border: 4px solid #240229;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: -5px -5px 5px rgba(255, 255, 255, 0.1),
+    10px 10px 10px rgba(0, 0, 0, 0.4),
+    inset -5px -5px 5px rgba(255, 255, 255, 0.2),
+    inset 10px 10px 10px rgba(0, 0, 0, 0.4);
+}
+
+.loader:before {
+  content: "";
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  right: 25px;
+  bottom: 25px;
+  z-index: 10;
+  background: #282828;
+  border-radius: 50%;
+  border: 2px solid #240229;
+  box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 0.2),
+    inset 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.loader span {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-image: linear-gradient(
+    -225deg,
+    #ff7402 0%,
+    #ffe700 50%,
+    #fff55e 100%
+  );
+
+  filter: blur(20px);
+  z-index: -1;
+  animation: animate 0.5s linear infinite;
+}
+
+.btn {
+  padding: 0 !important;
+  width: min-content;
+}
+
+.header-btn {
+  width: 2rem !important;
+}
+
+.gradient-shadow {
+  box-shadow: 0px 10px 40px -10px rgba(0, 64, 128, 0.1);
+  transition: 0.5s;
+}
+
+.gradient-shadow:hover {
+  box-shadow: 0 21px 36px 0 rgba(0, 64, 128, 0.3);
+}
+
+.frosted-nav {
+  background-color: rgba(245, 247, 250, 0.6);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: 2px 0 15px rgb(35 38 38 / 13%);
+}
+
+.frosted {
+  background-color: rgba(245, 247, 250, 0.6);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.file {
+  opacity: 0;
+  width: 0.1px;
+  height: 0.1px;
+  position: absolute;
+}
+
+.file-name {
+  position: absolute;
+  bottom: -35px;
+  left: 10px;
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.label {
+  background: rgba(243, 244, 246);
+  box-shadow: none;
+  transition: 0.5s;
+}
+
+.label:hover {
+  background: #dcdee2;
+}
+
+.text-red {
+  color: #e53935 !important;
+}
+
+.popup-content {
+  border-radius: 5px;
+}
+
+.rotate-135 {
+  transform: rotate(135deg);
+}
+
+.rotate-225 {
+  transform: rotate(225deg);
+}
+
+.font-cursive {
+  font-family: cursive;
+}
+
+.box {
+  background: rgba(255, 254, 254, 0.05);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(9.5px);
+  -webkit-backdrop-filter: blur(9.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/*button:focus {
+  border: 2px solid white;
+  border-radius: 50%;
+  outline: none;
+  transition: all 220ms ease-in;
+}*/
+
+.icons-bg {
+  background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjEyMCIgdmlld0JveD0iMCAwIDEyMCAxMjAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0wIDYwQzAgNDIuNiA0Mi42IDAgNjAgMEM3Ny40IDAgMTIwIDQyLjYgMTIwIDYwQzEyMCA3Ny40IDc3LjQgMTIwIDYwIDEyMEM0Mi42IDEyMCAwIDc3LjQgMCA2MFoiIGZpbGw9InVybCgjcGFpbnQwX2xpbmVhcikiLz4KPGRlZnM+CjxsaW5lYXJHcmFkaWVudCBpZD0icGFpbnQwX2xpbmVhciIgeDE9IjQwIiB5MT0iLTEuMzUxMDRlLTA2IiB4Mj0iNzciIHkyPSIxMjQiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KPHN0b3Agc3RvcC1jb2xvcj0iI0RDMDdGRiIvPgo8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMyQjYyRkYiLz4KPC9saW5lYXJHcmFkaWVudD4KPC9kZWZzPgo8L3N2Zz4K);
+  background-size: cover;
+}
+
+.text-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-heading {
+  background: linear-gradient(
+    90.92deg,
+    #774dff 2.63%,
+    #239eb9 48.37%,
+    #d73e87 88.04%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}

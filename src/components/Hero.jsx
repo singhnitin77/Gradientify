@@ -19,14 +19,14 @@ const Hero = () => {
   return (
     <>
       {/* <div className="bg-image2 bg-cover bg-no-repeat bg-center"> */}
-      <div className="hero-container2">
-        <div className="flex flex-col md:flex-row px-[40px] py-[60px] min-h-[95vh] overflow-hidden transition duration-300">
+      <div className="hero-container3">
+        <div className="flex flex-col md:flex-row px-[25px] md:px-[40px] py-[30px] md:py-[60px] h-auto min-h-[95vh] overflow-hidden transition duration-300">
           <YtVideo open={showYt} setOpen={setShowYt} />
-          <div className="flex flex-1 justify-center items-start flex-col mr-[40px]">
-            <h1 className="font-Epilogue text-[38px] md:text-[44px] lg:text-[54px] font-extrabold text-[#ECF2F5]">
+          <div className="flex flex-1 justify-center items-start flex-col md:mr-[20px]">
+            <h1 className="font-Epilogue text-[36px] md:text-[46px] lg:text-[54px] leading-[1.1] md:leading-[1.25] font-extrabold text-[#ECF2F5]">
               Find the Perfect gradient for your next projects
             </h1>
-            <p className="font-Epilogue text-[18px] md:text-[18px] lg:text-[20px] text-[#B5C0CC]  font-medium mt-[20px] mb-[32px]">
+            <p className="font-Epilogue leading-[1.35] text-[16px] md:text-[18px] lg:text-[20px] text-[#B5C0CC] font-medium mt-[20px] mb-[32px]">
               Gradientify is an all-in-one tool that gives you access to 100+
               carefully crafted gradients, generates gradients from an image,
               creates your own gradient, and easily makes tints and shades of a
@@ -41,14 +41,7 @@ const Hero = () => {
 
           {/* Video */}
 
-          <div className="flex items-center justify-center flex-col relative">
-            <div className="absolute h-full w-full flex items-center justify-center">
-              <img
-                src={svgicon}
-                alt="SVG Icon"
-                className="w-[320px] lg:w-[450px] xl:w-[450px] opacity-50 lg:opacity-100"
-              />
-            </div>
+          <div className="flex flex-1 items-center justify-center relative">
             <div className="flex items-center justify-center relative">
               <div className="flex">
                 <div id="scene">
@@ -56,7 +49,7 @@ const Hero = () => {
                     src={banner}
                     alt="Banner"
                     data-depth="0.3"
-                    className="h-[189px] lg:h-[315px] w-[336px] lg:w-[560px] rounded-md border border-[#B84F90]"
+                    className="h-[195px] w-[344px] lg:h-[340px] lg:w-[604px] rounded-md border border-[#B84F90]"
                   />
                 </div>
                 <div

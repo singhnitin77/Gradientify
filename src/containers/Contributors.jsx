@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { ContributeCard, GradientifyBanner } from "../components";
 import axios from "axios";
+import Newsletter from "./Newsletter";
 
 const Contributors = () => {
   const [data, setData] = useState([]);
@@ -35,6 +36,7 @@ const Contributors = () => {
           })}
         </div>
       </div>
+      <Newsletter />
     </>
   );
 };

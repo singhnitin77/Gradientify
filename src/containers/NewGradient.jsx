@@ -16,26 +16,26 @@ const NewGradient = () => {
    },`;
 
   return (
-    <div className="px-[80px] py-[92px] w-full bg-[#F5F9FF]">
-      <h1 className="text-[36px] font-bold font-Epilogue text-center leading-[1.3] mb-[72px] text-gradient-heading mx-auto md:w-7/12">
+    <div className="px-[30px] md:px-[72px] lg:px-[80px] py-[72px] md:py-[80px] lg:py-[92px] w-full bg-[#F5F9FF]">
+      <h1 className="text-[28px] md:text-[36px] font-bold font-Epilogue text-center leading-[1.3] mb-[54px] md:mb-[72px] text-gradient-heading mx-auto md:w-7/12">
         Add New Gradient
       </h1>
-      <div className="w-[60%] mx-auto">
-        <p className="text-left text-[18px] font-Epilogue font-medium">
+      <div className="w-full md:w-[60%] mx-auto">
+        <p className="text-left text-[16px] md:text-[18px] font-Epilogue font-medium">
           Adding a gradient to gradientify is easy. All gradients are read from
           a gradients.json file which is available in this project's repo.
           Simply add your gradient details to it and submit a pull request.
         </p>
-        <p className="text-left text-[18px] font-Epilogue mt-[42px] font-medium">
+        <p className="text-left text-[16px] md:text-[18px] font-Epilogue mt-[42px] font-medium">
           Adding a gradient to the library is super simple. All the gradients
           are loaded and rendered from a single gradients.json file in the root.
         </p>
-        <p className="text-left text-[18px] font-Epilogue mt-[42px] font-medium">
+        <p className="text-left text-[16px] md:text-[18px] font-Epilogue mt-[42px] font-medium">
           To add your gradient, fork this repository, add your gradient colors
           in the HEX format along with a name to the end of the json file and
           submit a pull request. Don't forget the commas!
         </p>
-        <p className="text-left text-[18px] font-Epilogue mt-[42px] font-medium">
+        <p className="text-left text-[16px] md:text-[18px] font-Epilogue mt-[42px] font-medium">
           After your PR got merged, you'll be automatically appared on
           contributors page. Works through Github API.
         </p>

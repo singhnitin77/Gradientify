@@ -427,3 +427,62 @@ input.error {
     radial-gradient(100% 148.07% at 0% 0%, #d50000 0%, #00ffff 100%);
   background-blend-mode: soft-light, overlay, difference, normal;
 }
+
+.hero-container3 {
+  background: linear-gradient(
+      126.95deg,
+      #91a2cd 0%,
+      #008716 51.69%,
+      #ff9900 100%
+    ),
+    linear-gradient(126.95deg, #ffffff 0%, #00273d 49.48%, #ff9900 100%),
+    radial-gradient(100% 216.55% at 100% 100%, #a4be00 0%, #6100ff 100%),
+    linear-gradient(307.27deg, #1dac92 0.37%, #2800c6 100%),
+    radial-gradient(
+      100% 140% at 100% 0%,
+      #eaff6b 0%,
+      #006c7a 57.29%,
+      #2200aa 100%
+    );
+  background-blend-mode: overlay, overlay, difference, difference, normal;
+}
+
+.hero-container4 {
+  background: linear-gradient(
+      126.95deg,
+      #91a2cd 0%,
+      #008716 51.69%,
+      #ff9900 100%
+    ),
+    linear-gradient(126.95deg, #ffffff 0%, #00273d 49.48%),
+    radial-gradient(100% 216.55% at 100% 100%, #a4be00 0%, #6100ff 100%),
+    linear-gradient(307.27deg, #1dac92 0.37%, #2800c6 100%),
+    radial-gradient(
+      100% 140% at 100% 0%,
+      #eaff6b 0%,
+      #006c7a 57.29%,
+      #2200aa 100%
+    );
+  background-blend-mode: overlay, overlay, difference, difference, normal;
+}
+
+.bg-app-gradient-2 {
+  background: linear-gradient(
+    287.43deg,
+    #764dff 33.27%,
+    #239eb9 61.72%,
+    #d73e87 82.93%
+  );
+}
+
+.bg-text-gradient {
+  background: linear-gradient(
+    287.43deg,
+    #774dff 33.27%,
+    #239eb9 61.72%,
+    #d73e87 82.93%
+  );
+  -webkit-background-clip: text !important;
+  background-size: cover;
+  -webkit-text-fill-color: transparent;
+}

@@ -5,14 +5,15 @@ import { FiBookOpen } from "react-icons/fi";
 
 const GradientifyBanner = () => {
   return (
-    <div className="bg-cover bg-no-repeat bg-center bg-image">
+    // <div className="bg-cover bg-no-repeat bg-center bg-image">
+    <div className="hero-container4">
       <div className="w-full text-center flex items-center md:items-center lg:items-center xl:items-center justify-center flex-col py-12 pl-5 lg:pl-0 xl:pl-0">
         <Link to="/">
           <h2 className="text-[38px] md:text-[40px] lg:text-[44px] text-white text-center font-Epilogue font-bold mb-[24px]">
             Gradientify
           </h2>
         </Link>
-        <p className="text-[18px] font-Epilogue font-medium text-[#B5C0CC] w-10/12 lg:w-7/12 text-center mb-[32px]">
+        <p className="md:text-[18px] text-[15px] font-Epilogue font-medium text-[#B5C0CC] px-[20px] w-full lg:w-7/12 text-center mb-[32px]">
           Introducing Designers Lobby, a growing collection of 1200+ design
           resources and tools with over 60 categories. Updated weekly for the
           community with fresh resources. We aim to help high-performance design

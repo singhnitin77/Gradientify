@@ -11,6 +11,7 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.27.2",
     "chroma-js": "^2.4.2",
+    "confetti-js": "^0.0.18",
     "parallax-js": "^3.1.0",
     "react": "^18.2.0",
     "react-codemirror2": "^7.2.1",

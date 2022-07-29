@@ -1,5 +1,6 @@
 import React from "react";
 import { FeatureCard } from "../components";
+import Newsletter from "./Newsletter";
 
 import {
   FiDatabase,
@@ -78,29 +79,31 @@ const Features = () => {
   ];
 
   return (
-    <div className="bg-image bg-cover bg-no-repeat bg-center md:py-[80px] py-[48px]">
-      <div className="h-auto w-full flex items-center justify-center p-7">
-        <div className="h-auto min-h-[80vh] w-full rounded-md flex items-center justify-center flex-wrap overflow-x-hidden">
-          <div className="flex items-center justify-between">
-            <h1 className="text-[30px] lg:text-[40px] xl:text-[36x] text-white font-bold font-Epilogue text-center mb-[24px]">
-              Features
-            </h1>
-          </div>
-          <div className="flex flex-wrap w-full justify-center mt-10">
-            {features.map((feature, i) => {
-              return (
-                <FeatureCard
-                  name={feature.name}
-                  description={feature.description}
-                  icon={feature.icon}
-                  key={i}
-                />
-              );
-            })}
+    <>
+      <div className="bg-image bg-cover bg-no-repeat bg-center md:py-[80px] py-[48px]">
+        <div className="h-auto w-full flex items-center justify-center p-7">
+          <div className="h-auto min-h-[80vh] w-full rounded-md flex items-center justify-center flex-wrap overflow-x-hidden">
+            <div className="flex items-center justify-between">
+              <h1 className="text-[30px] lg:text-[40px] xl:text-[36x] text-white font-bold font-Epilogue text-center mb-[24px]">
+                Features
+              </h1>
+            </div>
+            <div className="flex flex-wrap w-full justify-center mt-10">
+              {features.map((feature, i) => {
+                return (
+                  <FeatureCard
+                    name={feature.name}
+                    description={feature.description}
+                    icon={feature.icon}
+                    key={i}
+                  />
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

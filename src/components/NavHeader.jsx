@@ -20,30 +20,33 @@ const NavHeader = () => {
     useGlobalContext();
 
   return (
-    <div className="px-[40px] py-[30px] block lg:flex space-y-4 sm:space-y-0 items-center justify-between w-full bg-[#ECF2F5] dark:border-[#777] dark:bg-[#1f1f1f] duration-300 transition">
-      <div className="border border-[#ddd] hover:border-[#3D5EFF] duration-300 transition px-3 lg:px-5 py-[10px] capitalize rounded-lg dark:border-[#555]">
+    <div className="w-full py-5 px-4 lg:px-8 bg-white dark:bg-[#1f1f1f] rounded-md flex items-center justify-center flex-col-reverse xl:justify-between lg:justify-between lg:flex-row xl:flex-row">
+      <div className="flex items-center gap-4 w-full lg:w-5/12 xl:w-5/12 justify-center lg:justify-start mt-2 xl:mt-0 lg:mt-0">
         <Link to="/all-gradients">
-          <div className="flex items-center justify-center">
-            <h1 className="text-[16px] font-bold text-Epilogue dark:text-white text-[#3D5EFF]">
-              Show All Gradients
-            </h1>
+          <div className="border border-[#ddd] hover:border-[#3D5EFF] dark:text-white duration-300 transition px-3 lg:px-5 py-[10px] capitalize rounded-lg dark:border-[#555]">
+            <div className="flex items-center justify-center">
+              <h1 className="font-semibold text-sm lg:text-lg text-Epilogue dark:text-white text-[#3D5EFF]">
+                Show All Gradients
+              </h1>
+            </div>
           </div>
         </Link>
-      </div>
-      <div className="flex items-center justify-center space-x-4">
+
         <button onClick={rotate}>
           <div className="border border-[#ddd] hover:border-[#3d5eff] text-[#3d5eff] duration-300 px-3 lg:px-4 py-[10px] text-[16px] lg:text-[20px] capitalize rounded-lg flex items-center justify-center font-Inter font-semibold dark:text-white dark:border-[#555]">
             <GrRotateRight className="text-[20px] lg:text-[24px] mr-2 duration-300" />
-            <span className="text-[16px] font-bold text-Epilogue dark:text-white text-[#3D5EFF]">
-              Rotate Gradients
+            <span className="font-semibold text-sm lg:text-lg text-Epilogue dark:text-white text-[#3D5EFF]">
+              Rotate
             </span>
           </div>
         </button>
+      </div>
 
+      <div className="flex items-center gap-4">
         <Link to="/saved-gradients">
           <div className="border border-[#ddd] hover:border-[#3d5eff] text-[#3d5eff] duration-300 px-3 lg:px-4 py-[10px] text-[16px] lg:text-[20px] capitalize rounded-lg flex items-center justify-center font-Inter font-semibold dark:text-white dark:border-[#555]">
             <BsBookmarkCheck className="text-[20px] lg:text-[24px] mr-2 duration-300" />
-            <span className="text-[16px] font-bold text-Epilogue dark:text-white text-[#3D5EFF]">
+            <span className="font-semibold text-sm lg:text-lg text-Epilogue dark:text-white text-[#3D5EFF]">
               Saved Gradients
             </span>
           </div>
@@ -52,8 +55,8 @@ const NavHeader = () => {
         <Link to="/add-new-gradient">
           <div className="border border-[#ddd] hover:border-[#3d5eff] text-[#3d5eff] duration-300 px-3 lg:px-4 py-[10px] text-[16px] lg:text-[20px] capitalize rounded-lg flex items-center justify-center font-Inter font-semibold dark:text-white dark:border-[#555]">
             <BsPlusSquare className="text-[20px] lg:text-[24px] mr-2 duration-300" />
-            <span className="text-[16px] font-bold text-Epilogue dark:text-white text-[#3D5EFF]">
-              Add a new Gradient
+            <span className="font-semibold text-sm lg:text-lg text-Epilogue dark:text-white text-[#3D5EFF]">
+              New Gradient
             </span>
           </div>
         </Link>

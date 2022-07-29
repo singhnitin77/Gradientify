@@ -1,35 +1,54 @@
 import React, { useState, useEffect } from "react";
+import toast from "react-hot-toast";
+import { FiSend } from "react-icons/fi";
+import ConfettiGenerator from "confetti-js";
 
 const Newsletter = () => {
   const [email, setEmail] = useState("");
 
+  useEffect(() => {
+    const confettiSettings = { target: "my-canvas", max: "200" };
+    const confetti = new ConfettiGenerator(confettiSettings);
+    confetti.render();
+
+    return () => confetti.clear();
+  });
+
   return (
-    <div className="w-[80%] mx-auto rounded-[20px]">
-      <div className="bg-cover bg-no-repeat bg-center bg-image rounded-[20px]">
-        <div className="px-[80px] py-[92px]">
-          <h1 className="text-white text-center font-Epilogue lg:text-[40px] font-bold">
-            Never Miss Out on Our New Products
-          </h1>
-          <form
-            className="w-full mt-[64px]"
-            // onSubmit={handleSubmit}
-          >
-            <div className="flex justify-between gap-2 items-center">
+    <div className="hero-container4 h-auto w-full px-[25px]">
+      <div className="h-auto min-h-[45vh] w-full rounded-md flex items-center justify-center flex-wrap flex-col relative overflow-hidden">
+        <canvas id="my-canvas" className="absolute"></canvas>
+        <h1
+          className="text-white text-2xl lg:text-4xl font-bold font-Epilogue relative mb-[18px]"
+          data-aos="fade-up"
+        >
+          Never Miss out on Our Next Products
+        </h1>
+        <p className="text-xs lg:text-[18px] text-[#aaa] text-center font-Epilogue lg:text-left relative">
+          Would You Like To Know About Our Next Product & Free Tools Like This?
+        </p>
+        <div className="w-11/12 lg:w-6/12 relative" data-aos="fade-up">
+          <div className="w-full p-[2px] bg-app-gradient-2 mt-4 rounded-md">
+            <form
+              action=""
+              className="bg-[#0a0719] flex duration-500 focus:border-[#3d5eff] pl-3 rounded-lg p-1 w-full items-center justify-between"
+            >
               <input
-                type="email"
-                className="w-[80%] text-[24px] py-[12px] px-[16px] border border-gray-300 rounded-[10px] placeholder:font-Epilogue placeholder:font-light focus:outline-none font-medium focus:shadow-outline shadow appearance-none font-Epilogue"
-                placeholder="Enter your email address"
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                value={email}
+                type="text"
+                placeholder="bhatinitin04@gmail.com"
+                className="h-full py-1 pl-1 w-full bg-transparent font-Epilogue placeholder:font-Epilogue text-white text-sm lg:text-base focus:outline-none appearance-none"
               />
-              <div className="">
-                <button className="bg-[#F5BA31] hover:bg-[#f7c85a] text-[#191925] font-Epilogue text-[22px] shine font-bold outline-none cursor-pointer flex items-cener justify-center px-[26px] py-[13px] rounded-[12px]">
-                  Subscribe
-                </button>
+              <div className="bg-[#764dff] p-2 lg:p-3 cursor:pointer shine rounded-lg text-sm lg:text-base">
+                <FiSend
+                  className="text-white -ml-1"
+                  style={{ transform: "rotate(45deg" }}
+                />
               </div>
-            </div>
-          </form>
+            </form>
+          </div>
+          <h3 className="bg-text-gradient font-semibold mb-2 uppercase mt-2 tracking-wider text-sm lg:text-base">
+            PS: We won't spam
+          </h3>
         </div>
       </div>
     </div>

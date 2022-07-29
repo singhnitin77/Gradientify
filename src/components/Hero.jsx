@@ -18,7 +18,8 @@ const Hero = () => {
 
   return (
     <>
-      <div className="bg-image bg-cover bg-no-repeat bg-center">
+      {/* <div className="bg-image2 bg-cover bg-no-repeat bg-center"> */}
+      <div className="hero-container2">
         <div className="flex flex-col md:flex-row px-[40px] py-[60px] min-h-[95vh] overflow-hidden transition duration-300">
           <YtVideo open={showYt} setOpen={setShowYt} />
           <div className="flex flex-1 justify-center items-start flex-col mr-[40px]">

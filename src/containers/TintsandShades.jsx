@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Values from "values.js";
 import { SingleColor } from "../components";
 import toast from "react-hot-toast";
@@ -15,6 +15,10 @@ const TintsandShades = () => {
     e.preventDefault();
     setShades(e.target.value);
   };
+
+  // useEffect(() => {
+  //   setList(new Values("#f15025").all(shades));
+  // }, [shades]);
 
   const handleSubmit = (e) => {
     e.preventDefault();

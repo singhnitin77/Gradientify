@@ -410,3 +410,20 @@ input.error {
   --max-width: 1170px;
   --fixed-width: 620px;
 }
+
+.hero-container {
+  background: radial-gradient(50% 123.47% at 50% 50%, #00ff94 0%, #720059 100%),
+    linear-gradient(121.28deg, #669600 0%, #ff0000 100%),
+    linear-gradient(360deg, #0029ff 0%, #8fff00 100%),
+    radial-gradient(100% 164.72% at 100% 100%, #6100ff 0%, #00ff57 100%),
+    radial-gradient(100% 148.07% at 0% 0%, #fff500 0%, #51d500 100%);
+  background-blend-mode: screen, color-dodge, overlay, difference, normal;
+}
+
+.hero-container2 {
+  background: linear-gradient(328.78deg, #030086 14.45%, #bd6177 84.36%),
+    linear-gradient(301.28deg, #209b4a 0%, #7000ff 100%),
+    radial-gradient(100% 138.56% at 100% 0%, #d50000 0%, #00ffe0 100%),
+    radial-gradient(100% 148.07% at 0% 0%, #d50000 0%, #00ffff 100%);
+  background-blend-mode: soft-light, overlay, difference, normal;
+}

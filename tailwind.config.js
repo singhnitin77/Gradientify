@@ -9,6 +9,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         image: "url('../src/assets/background.png')",
+        image2: "url('../src/assets/background2.jfif')",
       },
     },
     screens: {

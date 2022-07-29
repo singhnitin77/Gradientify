@@ -101,14 +101,19 @@ const Gradient = ({ gradient, align }) => {
     fetchSavedGradients();
   });
 
+  let background;
+  if (gradient.colors.length > 2) {
+    background = `linear-gradient(to ${align}, ${gradient.colors[0]}, ${gradient.colors[1]},${gradient.colors[2]})`;
+  } else {
+    background = `linear-gradient(to ${align}, ${gradient.colors[0]}, ${gradient.colors[1]})`;
+  }
+
   return (
     <div className="gradient-shadow bg-white m-3 shadow-xl rounded-[10px] transition duration-300 cursor-pointer text-[#222] dark:bg-[#222222]">
       <Link to={`/gradient/${gradient.id}`}>
         <div
           className="h-[220px] w-full rounded-t-[10px] flex items-start justify-end p-2 relative overflow-hidden"
-          style={{
-            background: `linear-gradient(to ${align}, ${gradient.colors[0]}, ${gradient.colors[1]},${gradient.colors[2]})`,
-          }}
+          style={{ background: `${background}` }}
         >
           {showCopyBg && (
             <div className="absolute h-full w-full top-0 left-0 flex items-center justify-center">

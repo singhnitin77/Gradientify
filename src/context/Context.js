@@ -20,8 +20,8 @@ const AppProvider = ({ children }) => {
     }
   };
 
-  // saved gradients
-  const [savedGradients, setSavedGradients] = useLocalStorage("saved", []);
+  // // saved gradients
+  // const [savedGradients, setSavedGradients] = useLocalStorage("saved", []);
 
   // dark mode
   const [darkMode, setDarkMode] = useState(false);
@@ -51,8 +51,8 @@ const AppProvider = ({ children }) => {
         align,
         setAlign,
         rotate,
-        savedGradients,
-        setSavedGradients,
+        // savedGradients,
+        // setSavedGradients,
       }}
     >
       {children}

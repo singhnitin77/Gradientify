@@ -7,9 +7,23 @@ import { BsFillPlayFill, BsLightning } from "react-icons/bs";
 import Parallax from "parallax-js";
 import { NavHeader } from "./";
 import { AllGradients } from "../containers";
+import AnimatedLetters from "./AnimatedLetters/AnimatedLetters";
 
 const Hero = () => {
   const [showYt, setShowYt] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
+
+  // const [letterClass, setLetterClass] = useState("text-animate");
+
+  // const nameArray = ["n", "i", "t", "i", "n"];
+
+  // const jobArray = ["s", "i", "n", "g", "h"];
+
+  // useEffect(() => {
+  //   return setTimeout(() => {
+  //     setLetterClass("text-animate-hover");
+  //   }, 4000);
+  // }, []);
 
   useEffect(() => {
     var scene = document.getElementById("scene");
@@ -25,6 +39,17 @@ const Hero = () => {
           <div className="flex flex-1 justify-center items-start flex-col md:mr-[20px]">
             <h1 className="font-Epilogue text-[36px] md:text-[46px] lg:text-[54px] leading-[1.1] md:leading-[1.25] font-extrabold text-[#ECF2F5]">
               Find the Perfect gradient for your next projects
+              {/* <AnimatedLetters
+                letterClass={letterClass}
+                strArray={nameArray}
+                idx={4}
+              />
+              <br />
+              <AnimatedLetters
+                letterClass={letterClass}
+                strArray={jobArray}
+                idx={9}
+              /> */}
             </h1>
             <p className="font-Epilogue leading-[1.35] text-[16px] md:text-[18px] lg:text-[20px] text-[#B5C0CC] font-medium mt-[20px] mb-[32px]">
               Gradientify is an all-in-one tool that gives you access to 100+
@@ -63,8 +88,8 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <NavHeader />
-      <Outlet />
+      <NavHeader setSearchTerm={setSearchTerm} searchTerm={searchTerm} />
+      <Outlet context={[searchTerm]} />
     </>
   );
 };
@@ -118,3 +143,78 @@ const Hero = ({ setOpen, user, setUser }) => {
 };
 
 export default Hero; */
+
+/* 
+
+const Home = () => {
+  const [letterClass, setLetterClass] = useState("text-animate");
+
+  const nameArray = ["l", "o", "b", "o", "d", "a", "n"];
+  const jobArray = [
+    "w",
+    "e",
+    "b",
+    " ",
+    "d",
+    "e",
+    "v",
+    "e",
+    "l",
+    "o",
+    "p",
+    "e",
+    "r",
+    ".",
+  ];
+
+  useEffect(() => {
+    return setTimeout(() => {
+      setLetterClass("text-animate-hover");
+    }, 4000);
+  }, []);
+
+  return (
+    <>
+      <div className="container home-page">
+        <div className="text-zone">
+          <h1>
+
+            <span className={letterClass}>H</span>
+            <span className={`${letterClass} _12`}>i,</span>
+            <br />
+            <span className={`${letterClass} _13`}>I</span>
+            <span className={`${letterClass} _14`}>'m</span>
+            <img
+              src={LogoTitle}
+              alt="JavaScript Developer Name, Web Developer Name"
+            />
+            <AnimatedLetters
+              letterClass={letterClass}
+              strArray={nameArray}
+              idx={15}
+            />
+            <br />
+            <AnimatedLetters
+              letterClass={letterClass}
+              strArray={jobArray}
+              idx={22}
+            />
+          </h1>
+
+
+          <h2>Front End Developer / JavaScript Expert / Youtuber</h2>
+          <Link to="/contact" className="flat-button">
+            CONTACT ME
+          </Link>
+        </div>
+        <Logo />
+      </div>
+
+      <Loader type="pacman" />
+    </>
+  );
+};
+
+export default Home;
+
+*/

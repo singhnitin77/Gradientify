@@ -61,7 +61,7 @@ const Navbar = () => {
             Share to Twitter
           </a>
 
-          <button className="rounded-md">
+          {/* <button className="rounded-md">
             <div
               onClick={toggleDarkMode}
               className="border border-[#ddd] hover:border-[#3d5eff] text-[#3d5eff] duration-300 px-3 py-[10px] text-lg capitalize rounded-lg font-semibold flex items-center justify-center dark:border-[#555] dark:text-white"
@@ -72,7 +72,7 @@ const Navbar = () => {
                 <FiSun className="text-[16px] lg:text-[20px] duration-300" />
               )}
             </div>
-          </button>
+          </button> */}
         </div>
 
         <button className="rounded-md block lg:hidden xl:hidden">

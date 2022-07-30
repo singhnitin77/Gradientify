@@ -18,16 +18,13 @@ const Newsletter = () => {
     <div className="hero-container4 h-auto w-full px-[25px]">
       <div className="h-auto min-h-[45vh] w-full rounded-md flex items-center justify-center flex-wrap flex-col relative overflow-hidden">
         <canvas id="my-canvas" className="absolute"></canvas>
-        <h1
-          className="text-white text-2xl lg:text-4xl font-bold font-Epilogue relative mb-[18px]"
-          data-aos="fade-up"
-        >
+        <h1 className="text-white text-2xl lg:text-4xl font-bold font-Epilogue relative mb-[18px] animate__animated animate__fadeInUp">
           Never Miss out on Our Next Products
         </h1>
         <p className="text-xs lg:text-[18px] text-[#aaa] text-center font-Epilogue lg:text-left relative">
           Would You Like To Know About Our Next Product & Free Tools Like This?
         </p>
-        <div className="w-11/12 lg:w-6/12 relative" data-aos="fade-up">
+        <div className="w-11/12 lg:w-6/12 relative animate__animated animate__fadeInUp">
           <div className="w-full p-[2px] bg-app-gradient-2 mt-4 rounded-md">
             <form
               action=""

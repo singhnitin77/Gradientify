@@ -36,9 +36,8 @@ import { Loading } from "../components";
 import { useGlobalContext } from "../context/Context";
 import { gradients } from "../utility/gradients";
 
-const IndividualGradientPage = () => {
-  const { rotate, align, savedGradients, setSavedGradients } =
-    useGlobalContext();
+const IndividualGradientPage = ({ savedGradients, setSavedGradients }) => {
+  const { align, rotate } = useGlobalContext();
 
   // const [gradient, setGradient] = useState([]);
 
@@ -62,11 +61,11 @@ const IndividualGradientPage = () => {
 
   const ComponentToPrint = forwardRef((props, ref) => (
     <div
-      className="h-[400px] w-[200px] lg:h-[1200px] lg:w-[630px] overflow-hidden absolute top-0 left-0 z-[-10]"
+      className="h-[400px] w-[200px] lg:h-[1200px] lg:w-[630px] overflow-hidden absolute z-[-10]"
       ref={ref}
       style={{
-        width: "630px",
-        height: "1200px",
+        height: "630px",
+        width: "1200px",
         background: `linear-gradient(to ${align}, ${gradient.colors[0]}, ${gradient.colors[1]})`,
       }}
     ></div>
@@ -248,6 +247,9 @@ const IndividualGradientPage = () => {
     //   </div>
     // </div>
     <div>
+      <div className="hidden">
+        <ComponentToPrint ref={componentRef} />
+      </div>
       <div className="h-full lg:h-[87vh] w-full flex items-center justify-center">
         <div
           style={{
@@ -265,6 +267,7 @@ const IndividualGradientPage = () => {
               style={{ background: `${gradient.colors[0]}` }}
             ></div>
           </Tooltip>
+
           <Tooltip title={`Copy ${gradient.colors[1]}`}>
             <div
               className="font-medium w-[40px] h-[40px] rounded-[50%]"
@@ -272,6 +275,7 @@ const IndividualGradientPage = () => {
               style={{ background: `${gradient.colors[1]}` }}
             ></div>
           </Tooltip>
+
           <Tooltip title={`Copy ${gradient.colors[2]}`}>
             <div
               className="font-medium w-[40px] h-[40px] rounded-[50%]"
@@ -358,11 +362,11 @@ const IndividualGradientPage = () => {
 
           <Tooltip title="Download Gradient">
             <div
-              // onClick={() =>
-              //   exportComponentAsPNG(componentRef, {
-              //     fileName: "gradient.png",
-              //   })
-              // }
+              onClick={() =>
+                exportComponentAsPNG(componentRef, {
+                  fileName: "gradient.png",
+                })
+              }
               className="overflow-hidden cursor-pointer flex items-center justify-center rounded-md border border-[#eee] bg-gray-100 transition duration-500 hover:bg-gray-200 dark:border-[#555] dark:bg-[#181718]"
             >
               <div className="w-40 h-9 flex items-center justify-center overflow-hidden">

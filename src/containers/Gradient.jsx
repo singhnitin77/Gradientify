@@ -23,9 +23,7 @@ import { HiOutlineExternalLink } from "react-icons/hi";
 // Link react router
 import { Links } from "react-router-dom";
 
-const Gradient = ({ gradient, align }) => {
-  const { savedGradients, setSavedGradients } = useGlobalContext();
-
+const Gradient = ({ gradient, align, savedGradients, setSavedGradients }) => {
   const [showCopyBg, setShowCopyBg] = useState(false);
   const [showSaveBg, setShowSaveBg] = useState(false);
   const [isBookMarked, setIsBookMarked] = useState(false);
@@ -109,7 +107,11 @@ const Gradient = ({ gradient, align }) => {
   }
 
   return (
-    <div className="gradient-shadow bg-white m-3 shadow-xl rounded-[10px] transition duration-300 cursor-pointer text-[#222] dark:bg-[#222222]">
+    <div
+      className="gradient-shadow bg-white m-3 shadow-xl rounded-[10px] transition duration-500 overflow-hidden cursor-pointer text-[#222] dark:bg-[#222222]"
+      data-aos="fade-up"
+      data-aos-duration="700"
+    >
       <Link to={`/gradient/${gradient.id}`}>
         <div
           className="h-[220px] w-full rounded-t-[10px] flex items-start justify-end p-2 relative overflow-hidden"

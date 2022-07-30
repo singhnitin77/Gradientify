@@ -80,7 +80,7 @@ const Features = () => {
 
   return (
     <>
-      <div className="bg-image bg-cover bg-no-repeat bg-center md:py-[80px] py-[48px]">
+      <div className="hero-container4 md:py-[80px] py-[48px]">
         <div className="h-auto w-full flex items-center justify-center p-7">
           <div className="h-auto min-h-[80vh] w-full rounded-md flex items-center justify-center flex-wrap overflow-x-hidden">
             <div className="flex items-center justify-between">

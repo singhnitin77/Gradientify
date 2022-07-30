@@ -2,8 +2,8 @@ import React from "react";
 import { Gradient } from "./";
 import { useGlobalContext } from "../context/Context";
 
-const SavedGradients = () => {
-  const { align, savedGradients, setSavedGradients } = useGlobalContext();
+const SavedGradients = ({ savedGradients, setSavedGradients }) => {
+  const { align, rotate } = useGlobalContext();
 
   return (
     <div className="px-[30px] md:px-[72px] lg:px-[80px] py-[72px] md:py-[80px] lg:py-[92px] w-full bg-[#F5F9FF]">
@@ -13,7 +13,13 @@ const SavedGradients = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
         {savedGradients.map((gradient) => {
           return (
-            <Gradient gradient={gradient} id={gradient.id} align={align} />
+            <Gradient
+              gradient={gradient}
+              key={gradient.id}
+              align={align}
+              savedGradients={savedGradients}
+              setSavedGradients={setSavedGradients}
+            />
           );
         })}
       </div>

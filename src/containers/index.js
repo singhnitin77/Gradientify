@@ -11,3 +11,4 @@ export { default as IndividualGradientPage } from "./IndividualGradientPage";
 export { default as SavedGradients } from "./SavedGradients";
 export { default as NewGradient } from "./NewGradient";
 export { default as ImageGradient } from "./ImageGradient";
+export { default as Category } from "./Category";

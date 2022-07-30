@@ -11,3 +11,5 @@ export { default as NavHeader } from "./NavHeader";
 export { default as Loading } from "./Loading";
 export { default as FeatureCard } from "./FeatureCard";
 export { default as SingleColor } from "./SingleColor";
+export { default as CategoryBanner } from "./CategoryBanner";
+export { default as SingleCategory } from "./SingleCategory";

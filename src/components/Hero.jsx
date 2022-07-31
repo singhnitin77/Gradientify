@@ -33,7 +33,7 @@ const Hero = () => {
   return (
     <>
       {/* <div className="bg-image2 bg-cover bg-no-repeat bg-center"> */}
-      <div className="hero-container3">
+      <div className="hero-container4">
         <div className="flex flex-col md:flex-row px-[25px] md:px-[40px] py-[30px] md:py-[60px] h-auto min-h-[95vh] overflow-hidden transition duration-300">
           <YtVideo open={showYt} setOpen={setShowYt} />
           <div className="flex flex-1 justify-center items-start flex-col md:mr-[20px]">

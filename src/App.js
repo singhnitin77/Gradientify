@@ -47,7 +47,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Hero />}>
             <Route
-              path="/all-gradients"
+              path="/"
               element={
                 <AllGradients
                   savedGradients={savedGradients}

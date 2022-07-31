@@ -36,7 +36,7 @@ const Gradient = ({ gradient, align, savedGradients, setSavedGradients }) => {
     // clipboard api
     navigator.clipboard.writeText(CSS);
 
-    toast.success("Copied to clipboard!");
+    // toast.success("Copied to clipboard!");
 
     setShowCopyBg(true); //ui change
     setTimeout(() => {
@@ -49,7 +49,7 @@ const Gradient = ({ gradient, align, savedGradients, setSavedGradients }) => {
     navigator.clipboard.writeText(color);
 
     // toast
-    toast.success("Copied to clipboard!");
+    // toast.success("Copied to clipboard!");
 
     setShowCopyBg(true); //ui change
     setTimeout(() => {
@@ -119,22 +119,18 @@ const Gradient = ({ gradient, align, savedGradients, setSavedGradients }) => {
         >
           {showCopyBg && (
             <div className="absolute h-full w-full top-0 left-0 flex items-center justify-center">
-              <div className="w-[92.5%] h-[92.5%] frosted-nav dark:bg-[#111] rounded-md flex items-center justify-center flex-col">
-                <BsClipboard className="text-3xl text-[#111] dark:text-[#fafafa]" />
-                <h3 className="text-[#111] dark:text-[#fafafa] mt-2">
-                  Copied to Clipboard
-                </h3>
+              <div className="w-[92.5%] h-[92.5%] rounded-md flex items-center justify-center flex-col">
+                <BsClipboard className="text-3xl text-[#fafafa]" />
+                <h3 className="text-[#fafafa] mt-2">Copied to Clipboard</h3>
               </div>
             </div>
           )}
 
           {showSaveBg && (
             <div className="absolute h-full w-full top-0 left-0 flex items-center justify-center">
-              <div className="w-[92.5%] h-[92.5%] frosted-nav dark:bg-[#111] rounded-md flex items-center justify-center flex-col">
-                <BsBookmarkCheck className="text-3xl text-[#111] dark:text-[#fafafa]" />
-                <h3 className="text-[#111] dark:text-[#fafafa] mt-2">
-                  Saved Gradient
-                </h3>
+              <div className="w-[92.5%] h-[92.5%] rounded-md flex items-center justify-center flex-col">
+                <BsBookmarkCheck className="text-3xl text-[#fafafa]" />
+                <h3 className="text-[#fafafa] mt-2">Saved Gradient</h3>
               </div>
             </div>
           )}

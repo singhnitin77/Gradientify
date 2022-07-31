@@ -2,12 +2,13 @@ import React, { useState, useEffect } from "react";
 import Values from "values.js";
 import { SingleColor } from "../components";
 import toast from "react-hot-toast";
+import { FiSend } from "react-icons/fi";
 
 const TintsandShades = () => {
   const [color, setColor] = useState("");
   const [error, setError] = useState(false);
   const [shades, setShades] = useState(10);
-  const [list, setList] = useState(new Values("#f15025").all(shades));
+  const [list, setList] = useState(new Values("#A8EB12").all(shades));
 
   console.log(shades);
 
@@ -40,25 +41,29 @@ const TintsandShades = () => {
 
   return (
     <>
-      <div className="px-[80px] py-[60px]">
-        <div className="flex items-center gap-[44px]">
-          <h3 className="font-Epilogue font-semibold text-[24px]">
+      <div className="md:px-[80px] py-[60px] px-[30px]">
+        <div className="flex items-center md:flex-row flex-col gap-[44px]">
+          <h3 className="font-Epilogue text-gradient-heading font-bold text-[28px]">
             Make Tints and Shades
           </h3>
+
           <form
             onSubmit={handleSubmit}
             action=""
-            className="flex items-center gap-[44px]"
+            className="flex items-center md:flex-row flex-col justify-between gap-[44px]"
           >
             <input
               type="text"
-              className="text-[24px] py-[12px] px-[12px] border border-gray-300 rounded-[8px] placeholder:font-Epilogue placeholder:font-light focus:outline-none font-medium focus:shadow-outline shadow appearance-none font-Epilogue"
+              className="text-[24px] py-[12px] px-[12px] text-[#555] border border-gray-300 rounded-[8px] placeholder:font-Epilogue placeholder:font-light focus:outline-none font-medium focus:shadow-outline shadow appearance-none font-Epilogue"
               value={color}
               placeholder="#f15025"
               onChange={(e) => setColor(e.target.value)}
             />
-            <button className="btn" type="submit">
-              Submit
+            <button
+              type="submit"
+              class="text-white font-Epilogue text-[18px] font-semibold bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:outline-none rounded-lg px-[24px] py-[12px] text-center mr-2 mb-2"
+            >
+              Generate
             </button>
           </form>
           <div
@@ -87,7 +92,7 @@ const TintsandShades = () => {
           </span>
         </div>
       </div>
-      <section className="colors">
+      <section className="colors mb-[72px]">
         {list.map((color, index) => {
           return (
             <SingleColor
@@ -104,3 +109,25 @@ const TintsandShades = () => {
 };
 
 export default TintsandShades;
+
+{
+  /* <div className="w-full p-[2px] bg-app-gradient-2 mt-4 rounded-md">
+  <form
+    action=""
+    className="bg-[#0a0719] flex duration-500 focus:border-[#3d5eff] pl-3 rounded-lg p-1 w-full items-center justify-between"
+  >
+    <input
+      type="text"
+      placeholder="bhatinitin04@gmail.com"
+      className="h-full py-1 pl-1 w-full bg-transparent font-Epilogue placeholder:font-Epilogue text-white text-sm lg:text-base focus:outline-none appearance-none"
+    />
+    <div className="bg-[#764dff] p-2 lg:p-3 cursor:pointer shine rounded-lg text-sm lg:text-base">
+      <FiSend
+        className="text-white -ml-1"
+        style={{ transform: "rotate(45deg" }}
+      />
+    </div>
+  </form>
+</div>;
+ */
+}

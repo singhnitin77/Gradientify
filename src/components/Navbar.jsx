@@ -4,6 +4,7 @@ import { FiMenu } from "react-icons/fi";
 import { BsSearch, BsX } from "react-icons/bs";
 import { FiMoon, FiSun } from "react-icons/fi";
 import { useGlobalContext } from "../context/Context";
+import logo from "../assets/logo.png";
 
 const Navbar = () => {
   const [showNav, setShowNav] = useState(false);
@@ -15,8 +16,9 @@ const Navbar = () => {
       <div className="w-full px-6 py-3 flex items-center justify-between">
         <div className="flex justify-start items-center">
           <Link to="/">
-            <div className="flex items-center justify-center">
-              {/* image logo */}
+            <div className="flex items-center justify-center gap-2">
+              {/* <p className="font-Epilogue text-[28px] font-extrabold">g</p> */}
+              <img src={logo} className="w-[34px] h-[34px]" />
               <span className="text-[20px] font-Epilogue font-bold dark:text-white">
                 Gradientify
               </span>

@@ -512,8 +512,7 @@ input.error {
 .modal__content {
   width: 800px;
   height: 500px;
-
-  border-radius: 20px;
+  border-radius: 12px;
   background: transparent;
   color: #000;
   margin: 0rem 4rem;

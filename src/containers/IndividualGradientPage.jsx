@@ -77,20 +77,19 @@ const IndividualGradientPage = ({ savedGradients, setSavedGradients }) => {
     toast.success("Copied to clipboard");
   };
 
-  let code =
-    gradient.colors &&
-    `background: ${gradient.colors[0]};  \nbackground: -webkit-linear-gradient(to ${align}, ${gradient.colors[0]}, ${gradient.colors[1]});  \nbackground: linear-gradient(to ${align}, ${gradient.colors[0]}, ${gradient.colors[1]}); `;
+  //   css code
+  const CSS = `background: ${gradient.colors[0]}; \nbackground: -webkit-linear-gradient(to ${align}, ${gradient.colors[0]}, ${gradient.colors[1]},${gradient.colors[2]}); \nbackground: linear-gradient(to ${align}, ${gradient.colors[0]}, ${gradient.colors[1]},${gradient.colors[2]}); `;
 
   let textCSS =
     gradient.colors &&
-    `background: -webkit-linear-gradient(to ${align}, ${gradient.colors[0]}, ${gradient.colors[1]});  
-     background: linear-gradient(to ${align}, ${gradient.colors[0]}, ${gradient.colors[1]});
+    `background: -webkit-linear-gradient(to ${align}, ${gradient.colors[0]}, ${gradient.colors[1]},${gradient.colors[2]});  
+     background: linear-gradient(to ${align}, ${gradient.colors[0]}, ${gradient.colors[1]},${gradient.colors[2]});
      -webkit-background-clip: text;
      -webkit-text-fill-color: transparent;`;
 
   // copy CSS
   const copyCSS = () => {
-    navigator.clipboard.writeText(code);
+    navigator.clipboard.writeText(CSS);
     toast.success("Copied to clipboard!");
   };
 
@@ -284,7 +283,7 @@ const IndividualGradientPage = ({ savedGradients, setSavedGradients }) => {
         </div>
         <div className="w-full overflow-hidden rounded-md h-40 mt-2">
           <CodeMirror
-            value={code}
+            value={CSS}
             options={{
               mode: "css",
               lineWrapping: true,
@@ -308,6 +307,19 @@ const IndividualGradientPage = ({ savedGradients, setSavedGradients }) => {
             </div>
           </Tooltip>
 
+          <Tooltip title="Copy Text CSS">
+            <div
+              onClick={copytextCSS}
+              className="overflow-hidden cursor-pointer flex items-center justify-center transition duration-300 dark:text-white"
+            >
+              <div className="flex items-center justify-center overflow-hidden">
+                <h1 className="font-Epilogue text-[18px] continuous-line font-medium">
+                  Copy Text CSS
+                </h1>
+              </div>
+            </div>
+          </Tooltip>
+
           <Tooltip title="Rotate Gradient">
             <div
               onClick={rotate}
@@ -316,19 +328,6 @@ const IndividualGradientPage = ({ savedGradients, setSavedGradients }) => {
               <div className="flex items-center justify-center overflow-hidden">
                 <h1 className="font-Epilogue text-[18px] continuous-line font-medium">
                   Rotate Gradient
-                </h1>
-              </div>
-            </div>
-          </Tooltip>
-
-          <Tooltip title="Copy Text CSS">
-            <div
-              onClick={copyCSS}
-              className="overflow-hidden cursor-pointer flex items-center justify-center transition duration-300 dark:text-white"
-            >
-              <div className="flex items-center justify-center overflow-hidden">
-                <h1 className="font-Epilogue text-[18px] continuous-line font-medium">
-                  Copy Text CSS
                 </h1>
               </div>
             </div>

@@ -29,14 +29,26 @@ const Gradient = ({ gradient, align, savedGradients, setSavedGradients }) => {
   const [isBookMarked, setIsBookMarked] = useState(false);
 
   //   css code
-  const CSS = `background: ${gradient.colors[0]};  /* fallback for old browsers */\nbackground: -webkit-linear-gradient(to ${align}, ${gradient.colors[0]}, ${gradient.colors[1]});  /* Chrome 10-25, Safari 5.1-6 */\nbackground: linear-gradient(to ${align}, ${gradient.colors[0]}, ${gradient.colors[1]}); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */`;
+  const CSS = `background: ${gradient.colors[0]}; \nbackground: -webkit-linear-gradient(to ${align}, ${gradient.colors[0]}, ${gradient.colors[1]},${gradient.colors[2]}); \nbackground: linear-gradient(to ${align}, ${gradient.colors[0]}, ${gradient.colors[1]},${gradient.colors[2]}); `;
+
+  let textCSS =
+    gradient.colors &&
+    `background: -webkit-linear-gradient(to ${align}, ${gradient.colors[0]}, ${gradient.colors[1]},${gradient.colors[2]});  
+     background: linear-gradient(to ${align}, ${gradient.colors[0]}, ${gradient.colors[1]},${gradient.colors[2]});
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;`;
+
+  const copytextCSS = () => {
+    navigator.clipboard.writeText(textCSS);
+    toast.success("Copied to clipboard!");
+  };
 
   //   copy css function
   const copyCSS = () => {
     // clipboard api
     navigator.clipboard.writeText(CSS);
 
-    // toast.success("Copied to clipboard!");
+    toast.success("Copied to clipboard!");
 
     setShowCopyBg(true); //ui change
     setTimeout(() => {
@@ -49,7 +61,7 @@ const Gradient = ({ gradient, align, savedGradients, setSavedGradients }) => {
     navigator.clipboard.writeText(color);
 
     // toast
-    // toast.success("Copied to clipboard!");
+    toast.success("Copied to clipboard!");
 
     setShowCopyBg(true); //ui change
     setTimeout(() => {
@@ -117,14 +129,14 @@ const Gradient = ({ gradient, align, savedGradients, setSavedGradients }) => {
           className="h-[220px] w-full rounded-t-[10px] flex items-start justify-end p-2 relative overflow-hidden"
           style={{ background: `${background}` }}
         >
-          {showCopyBg && (
+          {/* {showCopyBg && (
             <div className="absolute h-full w-full top-0 left-0 flex items-center justify-center">
               <div className="w-[92.5%] h-[92.5%] rounded-md flex items-center justify-center flex-col">
                 <BsClipboard className="text-3xl text-[#fafafa]" />
                 <h3 className="text-[#fafafa] mt-2">Copied to Clipboard</h3>
               </div>
             </div>
-          )}
+          )} */}
 
           {showSaveBg && (
             <div className="absolute h-full w-full top-0 left-0 flex items-center justify-center">
@@ -195,7 +207,7 @@ const Gradient = ({ gradient, align, savedGradients, setSavedGradients }) => {
 
           <Tooltip title="Copy Text CSS">
             <div
-              onClick={copyCSS}
+              onClick={copytextCSS}
               className="overflow-hidden ml-3 flex items-center justify-center transition duration-300 dark:text-white"
             >
               <div className="flex items-center justify-center overflow-hidden">

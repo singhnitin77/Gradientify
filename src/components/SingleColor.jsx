@@ -43,7 +43,7 @@ const SingleColor = ({ rgb, weight, index, hexColor }) => {
             navigator.clipboard.writeText(hexValue);
           }}
           className={`text-[22px] hover:scale-125 transition duration-500 text-[#111] ${
-            index > 10 && "text-[#eaeaea]"
+            index > 10 && "text-[#eee]"
           }`}
         />
       </div>

@@ -34,10 +34,12 @@ import {
 
 import { Loading } from "../components";
 import { useGlobalContext } from "../context/Context";
-import { gradients } from "../utility/gradients";
+import { useGradient } from "../context/GradientContext";
+// import { gradients } from "../utility/gradients";
 
 const IndividualGradientPage = ({ savedGradients, setSavedGradients }) => {
   const { align, rotate } = useGlobalContext();
+  const { gradients } = useGradient();
 
   // const [gradient, setGradient] = useState([]);
 

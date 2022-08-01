@@ -293,6 +293,7 @@ const IndividualGradientPage = ({ savedGradients, setSavedGradients }) => {
             }}
           />
         </div>
+
         <div className="flex items-center gap-5 mt-[24px]">
           <Tooltip title="Copy CSS">
             <div

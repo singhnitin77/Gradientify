@@ -32,7 +32,7 @@ const Newsletter = () => {
             >
               <input
                 type="text"
-                placeholder="bhatinitin04@gmail.com"
+                placeholder="Enter your email address"
                 className="h-full py-1 pl-1 w-full bg-transparent font-Epilogue placeholder:font-Epilogue text-white text-sm lg:text-base focus:outline-none appearance-none"
               />
               <div className="bg-[#764dff] p-2 lg:p-3 cursor:pointer shine rounded-lg text-sm lg:text-base">
@@ -44,7 +44,7 @@ const Newsletter = () => {
             </form>
           </div>
           <h3 className="bg-text-gradient font-semibold mb-2 uppercase mt-2 tracking-wider text-sm lg:text-base">
-            PS: We won't spam
+            We don’t spam, only updates & new products!
           </h3>
         </div>
       </div>

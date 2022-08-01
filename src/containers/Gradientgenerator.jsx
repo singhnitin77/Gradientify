@@ -3,11 +3,13 @@ import arrow from "../assets/arrow.svg";
 import radial from "../assets/radial.svg";
 import chroma from "chroma-js";
 import { Tooltip } from "@mui/material";
+import { FaArrowUp } from "react-icons/fa";
+import { MdArrowUpward, MdOutlineReplay } from "react-icons/md";
 
 const Gradientgenerator = () => {
-  const [color1, setColor1] = useState("#FF6347");
+  const [color1, setColor1] = useState("#051937");
 
-  const [color2, setColor2] = useState("#0000FF");
+  const [color2, setColor2] = useState("#A8EB12");
   const [direction, setDirection] = useState("linear-gradient");
   const [generated1, setGenerated1] = useState("");
   const [generated2, setGenerated2] = useState("");
@@ -119,83 +121,55 @@ const Gradientgenerator = () => {
         <div className="flex items-center justify-center p-2 gap-2 flex-wrap md:gap-5">
           <Tooltip title="to top">
             <button onClick={() => changeOrientation("to top")}>
-              <img src={arrow} alt="arrow to top" />
+              <MdArrowUpward className="text-2xl md:text-3xl text-white" />
             </button>
           </Tooltip>
 
           <Tooltip title="to right top">
             <button onClick={() => changeOrientation("to right top")}>
-              <img
-                src={arrow}
-                alt="arrow to right top"
-                className="transform rotate-45"
-              />
+              <MdArrowUpward className="text-2xl md:text-3xl text-white transform rotate-45" />
             </button>
           </Tooltip>
 
           <Tooltip title="to right">
             <button onClick={() => changeOrientation("to right")}>
-              <img
-                src={arrow}
-                alt="arrow to right"
-                className="transform rotate-90"
-              />
+              <MdArrowUpward className="text-2xl md:text-3xl text-white transform rotate-90" />
             </button>
           </Tooltip>
 
           <Tooltip title="to right bottom">
             <button onClick={() => changeOrientation("to right bottom")}>
-              <img
-                src={arrow}
-                alt="arrow to right bottom"
-                className="transform rotate-135"
-              />
+              <MdArrowUpward className="text-2xl md:text-3xl text-white transform rotate-135" />
             </button>
           </Tooltip>
 
           <Tooltip title="to bottom">
             <button onClick={() => changeOrientation("to bottom")}>
-              <img
-                src={arrow}
-                alt="arrow to bottom"
-                className="transform rotate-180"
-              />
+              <MdArrowUpward className="text-2xl md:text-3xl text-white transform rotate-180" />
             </button>
           </Tooltip>
 
           <Tooltip title="to bottom left">
             <button onClick={() => changeOrientation("to bottom left")}>
-              <img
-                src={arrow}
-                alt="arrow to bottom left"
-                className="transform rotate-225"
-              />
+              <MdArrowUpward className="text-2xl md:text-3xl text-white transform rotate-225" />
             </button>
           </Tooltip>
 
           <Tooltip title="to left">
             <button onClick={() => changeOrientation("to left")}>
-              <img
-                src={arrow}
-                alt="arrow to left"
-                className="transform -rotate-90"
-              />
+              <MdArrowUpward className="text-2xl md:text-3xl text-white transform -rotate-90" />
             </button>
           </Tooltip>
 
           <Tooltip title="to left top">
             <button onClick={() => changeOrientation("to left top")}>
-              <img
-                src={arrow}
-                alt="arrow to left top"
-                className="transform rotate-180"
-              />
+              <MdArrowUpward className="text-2xl md:text-3xl text-white transform -rotate-45" />
             </button>
           </Tooltip>
 
           <Tooltip title="to radial">
             <button onClick={() => changeOrientation("circle")}>
-              <img src={radial} alt="radial" className="px-1.5" />
+              <MdOutlineReplay className="text-2xl md:text-3xl text-white" />
             </button>
           </Tooltip>
         </div>
@@ -210,7 +184,7 @@ const Gradientgenerator = () => {
         <div className="flex items-center justify-center flex-wrap">
           <form
             action=""
-            className="flex gap-5 justify-center items-center flex-wrap"
+            className="flex gap-5 justify-center items-center flex-wrap mb-[24px]"
           >
             <input
               type="text"

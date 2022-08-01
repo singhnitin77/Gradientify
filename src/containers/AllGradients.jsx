@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { CategoryBanner, Loading } from "../components";
 import { useGlobalContext } from "../context/Context";
-import { gradients } from "../utility/gradients";
+// import { gradients } from "../utility/gradients";
 import { Gradient } from "../containers";
 import { useOutletContext } from "react-router-dom";
 
@@ -11,11 +11,11 @@ import "aos/dist/aos.css";
 
 // animate.css
 import "animate.css";
+import { useGradient } from "../context/GradientContext";
 
 const AllGradients = ({ savedGradients, setSavedGradients }) => {
   const { align, rotate } = useGlobalContext();
-  // const [gradients, setGradients] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const { gradients, loading } = useGradient();
 
   const [searchTerm] = useOutletContext();
 
@@ -28,35 +28,36 @@ const AllGradients = ({ savedGradients, setSavedGradients }) => {
         100+ Carefully Crafted Gradients ready to use in your next projects.
       </h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-        {gradients
-          .filter((val) => {
-            if (searchTerm === "") {
-              return val;
-            } else if (
-              val.colors[0]
-                .toLowerCase()
-                .includes(searchTerm.toLocaleLowerCase())
-            ) {
-              return val;
-            } else if (
-              val.colors[1]
-                .toLowerCase()
-                .includes(searchTerm.toLocaleLowerCase())
-            ) {
-              return val;
-            }
-          })
-          .map((gradient, key) => {
-            return (
-              <Gradient
-                gradient={gradient}
-                key={key}
-                align={align}
-                savedGradients={savedGradients}
-                setSavedGradients={setSavedGradients}
-              />
-            );
-          })}
+        {gradients &&
+          gradients
+            .filter((val) => {
+              if (searchTerm === "") {
+                return val;
+              } else if (
+                val.colors[0]
+                  .toLowerCase()
+                  .includes(searchTerm.toLocaleLowerCase())
+              ) {
+                return val;
+              } else if (
+                val.colors[1]
+                  .toLowerCase()
+                  .includes(searchTerm.toLocaleLowerCase())
+              ) {
+                return val;
+              }
+            })
+            .map((gradient, key) => {
+              return (
+                <Gradient
+                  gradient={gradient}
+                  key={key}
+                  align={align}
+                  savedGradients={savedGradients}
+                  setSavedGradients={setSavedGradients}
+                />
+              );
+            })}
       </div>
     </div>
   );

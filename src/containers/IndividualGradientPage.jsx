@@ -266,10 +266,10 @@ const IndividualGradientPage = ({ savedGradients, setSavedGradients }) => {
     <div>
       {gradient && (
         <>
-          <div className="opacity-0">
-            {/* <ComponentToPrint ref={componentRef} /> */}
+          <div className="overflow-hidden opacity-0">
+            {/* <ComponentToPrint ref={componentRef} className="overflow-hidden" /> */}
           </div>
-          <div className="h-full lg:h-[87vh] w-full flex items-center justify-center">
+          <div className="h-full lg:h-[87vh] mt-[44px] w-full flex items-center justify-center">
             <div
               // style={{
               //   background: `linear-gradient(to ${align}, ${gradient.colors[0]}, ${gradient.colors[1]})`,

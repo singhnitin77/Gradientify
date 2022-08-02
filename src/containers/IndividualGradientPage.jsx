@@ -56,6 +56,7 @@ const IndividualGradientPage = ({ savedGradients, setSavedGradients }) => {
   const [gradient, setGradient] = useState();
   const [CSS, setCSS] = useState("");
   const [textCSS, setTextCSS] = useState("");
+  const [background, setBackground] = useState("");
 
   //filtering gradient and producing css
   useEffect(() => {
@@ -78,17 +79,17 @@ const IndividualGradientPage = ({ savedGradients, setSavedGradients }) => {
       -webkit-text-fill-color: transparent;`;
       setCSS(cssVal);
       setTextCSS(textCSSVal);
+      let backgroundVal;
+      if (val.colors.length > 2) {
+        backgroundVal = `linear-gradient(to ${align}, ${val.colors[0]}, ${val.colors[1]},${val.colors[2]})`;
+      } else {
+        backgroundVal = `linear-gradient(to ${align}, ${val.colors[0]}, ${val.colors[1]})`;
+      }
+      setBackground(backgroundVal);
     }
   }, [gradients, loading, id, align]);
 
   console.log(gradient);
-
-  let background;
-  if (gradient.colors.length > 2) {
-    background = `linear-gradient(to ${align}, ${gradient.colors[0]}, ${gradient.colors[1]},${gradient.colors[2]})`;
-  } else {
-    background = `linear-gradient(to ${align}, ${gradient.colors[0]}, ${gradient.colors[1]})`;
-  }
 
   const ComponentToPrint = forwardRef((props, ref) => (
     <div

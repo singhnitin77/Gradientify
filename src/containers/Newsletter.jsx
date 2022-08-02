@@ -16,7 +16,7 @@ const Newsletter = () => {
 
   return (
     <div className="hero-container4 h-auto w-full px-[25px]">
-      <div className="h-auto min-h-[45vh] w-full rounded-md flex items-center justify-center flex-wrap flex-col relative overflow-hidden">
+      <div className="h-auto min-h-[50vh] w-full rounded-md flex items-center justify-center flex-wrap flex-col relative overflow-hidden">
         <canvas id="my-canvas" className="absolute"></canvas>
         <h1 className="text-white text-2xl lg:text-4xl font-bold font-Epilogue relative mb-[18px] animate__animated animate__fadeInUp">
           Never Miss out on Our Next Products

@@ -41,7 +41,7 @@ const App = () => {
         <Toaster />
       </div>
       <Router>
-        {/* <ScrollToTop /> */}
+        <ScrollToTop />
         <Navbar />
 
         <Routes>

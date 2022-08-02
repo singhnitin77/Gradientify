@@ -73,7 +73,7 @@ const TintsandShades = () => {
         </div>
 
         <div className="flex mt-[28px]">
-          <input
+          {/* <input
             type="range"
             id="volume"
             name="volume"
@@ -89,7 +89,7 @@ const TintsandShades = () => {
             className="self-center text-xl font-bold px-3 py-2 bg-gray-100 border text-center rounded ml-3"
           >
             {shades}
-          </span>
+          </span> */}
         </div>
       </div>
       <section className="colors mb-[72px]">

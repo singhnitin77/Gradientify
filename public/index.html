@@ -27,37 +27,13 @@
       rel="stylesheet"
     />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js"></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.2/color-thief.min.js"
-      integrity="sha512-mMe7BAZPOkGbq+zhRBMNV3Q+5ZDzcUEOJoUYXbHpEcODkDBYbttaW7P108jX66AQgwgsAjvlP4Ayb/XLJZfmsg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script src="node_modules/colorthief/dist/color-thief.umd.js"></script>
-    <script>
-      const colorThief = new ColorThief();
-      const img = document.querySelector("img");
-
-      // Make sure image is finished loading
-      if (img.complete) {
-        colorThief.getColor(img);
-      } else {
-        image.addEventListener("load", function () {
-          colorThief.getColor(img);
-        });
-      }
-    </script>
-    <script type="module" src="app.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/react-codemirror2@7.2.1/index.min.js"></script> -->
+    <!-- <script type="module" src="app.js"></script> -->
 
     <title>Gradientify</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <!-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-      AOS.init();
-    </script> -->
   </body>
 </html>

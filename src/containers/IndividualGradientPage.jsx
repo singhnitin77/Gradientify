@@ -15,11 +15,11 @@ import toast from "react-hot-toast";
 import { useParams } from "react-router-dom";
 
 // code editor components
-import "codemirror/lib/codemirror.css";
-import "codemirror/theme/material-palenight.css";
-import "codemirror/mode/xml/xml";
-import "codemirror/mode/javascript/javascript";
-import "codemirror/mode/css/css";
+// import "codemirror/lib/codemirror.css";
+// import "codemirror/theme/material-palenight.css";
+// import "codemirror/mode/xml/xml";
+// import "codemirror/mode/javascript/javascript";
+// import "codemirror/mode/css/css";
 import { Controlled as CodeMirror } from "react-codemirror2";
 
 // icons

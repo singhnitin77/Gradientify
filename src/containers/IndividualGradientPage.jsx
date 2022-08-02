@@ -1,7 +1,7 @@
 import React, { forwardRef, useEffect, useRef, useState } from "react";
 
 // material ui
-import { Button, Tooltip } from "@mui/material";
+import { Button, setRef, Tooltip } from "@mui/material";
 import {
   exportComponentAsPNG,
   exportComponentAsJPEG,
@@ -39,25 +39,44 @@ import { useGradient } from "../context/GradientContext";
 
 const IndividualGradientPage = ({ savedGradients, setSavedGradients }) => {
   const { align, rotate } = useGlobalContext();
-  const { gradients } = useGradient();
+  const { gradients, loading } = useGradient();
 
   // const [gradient, setGradient] = useState([]);
 
   const [isBookMarked, setIsBookMarked] = useState(false);
 
-  let params = useParams();
+  let { id } = useParams();
   const componentRef = useRef();
 
   //   getting gradient id from the params
-  const gradientId = params.id;
   // console.log(useParams());
   // const { id } = useParams();
   // console.log(id);
-  console.log(gradientId);
+  console.log(id);
+  const [gradient, setGradient] = useState();
+  const [CSS, setCSS] = useState("");
+  const [textCSS, setTextCSS] = useState("");
 
-  const gradient = gradients.find(
-    (gradientobj) => gradientobj.id === Number(gradientId)
-  );
+  //filtering gradient and producing css
+  useEffect(() => {
+    let val = gradients.find((gradientobj) => gradientobj.id === Number(id));
+    setGradient(val);
+    if (val) {
+      //   css code
+      const cssVal = val.colors[2]
+        ? `background: ${val.colors[0]}; \nbackground: -webkit-linear-gradient(to ${align}, ${val.colors[0]}, ${val.colors[1]},${val.colors[2]}); \nbackground: linear-gradient(to ${align}, ${val.colors[0]}, ${val.colors[1]},${val.colors[2]}); `
+        : `background: ${val.colors[0]}; \nbackground: -webkit-linear-gradient(to ${align}, ${val.colors[0]}, ${val.colors[1]}); \nbackground: linear-gradient(to ${align}, ${val.colors[0]}, ${val.colors[1]});`;
+
+      let textCSSVal =
+        val.colors &&
+        `background: -webkit-linear-gradient(to ${align}, ${val.colors[0]}, ${val.colors[1]},${val.colors[2]});  
+      background: linear-gradient(to ${align}, ${val.colors[0]}, ${val.colors[1]},${val.colors[2]});
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;`;
+      setCSS(cssVal);
+      setTextCSS(textCSSVal);
+    }
+  }, [gradients, loading, id , align]);
 
   console.log(gradient);
 
@@ -79,16 +98,6 @@ const IndividualGradientPage = ({ savedGradients, setSavedGradients }) => {
     toast.success("Copied to clipboard");
   };
 
-  //   css code
-  const CSS = `background: ${gradient.colors[0]}; \nbackground: -webkit-linear-gradient(to ${align}, ${gradient.colors[0]}, ${gradient.colors[1]},${gradient.colors[2]}); \nbackground: linear-gradient(to ${align}, ${gradient.colors[0]}, ${gradient.colors[1]},${gradient.colors[2]}); `;
-
-  let textCSS =
-    gradient.colors &&
-    `background: -webkit-linear-gradient(to ${align}, ${gradient.colors[0]}, ${gradient.colors[1]},${gradient.colors[2]});  
-     background: linear-gradient(to ${align}, ${gradient.colors[0]}, ${gradient.colors[1]},${gradient.colors[2]});
-     -webkit-background-clip: text;
-     -webkit-text-fill-color: transparent;`;
-
   // copy CSS
   const copyCSS = () => {
     navigator.clipboard.writeText(CSS);
@@ -103,9 +112,7 @@ const IndividualGradientPage = ({ savedGradients, setSavedGradients }) => {
   const saveGradient = () => {
     if (isBookMarked) {
       setSavedGradients(
-        savedGradients.filter(
-          (savedGradient) => savedGradient.id !== gradientId
-        )
+        savedGradients.filter((savedGradient) => savedGradient.id !== id)
       );
       // toast
       toast.success("Removed Gradient from Saved!");
@@ -113,7 +120,7 @@ const IndividualGradientPage = ({ savedGradients, setSavedGradients }) => {
       setSavedGradients([
         ...savedGradients,
         {
-          id: gradientId,
+          id: id,
           colors: gradient.colors,
         },
       ]);
@@ -123,9 +130,7 @@ const IndividualGradientPage = ({ savedGradients, setSavedGradients }) => {
   };
 
   const fetchSavedGradients = () => {
-    if (
-      savedGradients.some((savedGradient) => savedGradient.id === gradientId)
-    ) {
+    if (savedGradients.some((savedGradient) => savedGradient.id === id)) {
       setIsBookMarked(true);
     } else {
       setIsBookMarked(false);
@@ -248,146 +253,152 @@ const IndividualGradientPage = ({ savedGradients, setSavedGradients }) => {
     //   </div>
     // </div>
     <div>
-      <div className="">{/* <ComponentToPrint ref={componentRef} /> */}</div>
-      <div className="h-full lg:h-[87vh] w-full flex items-center justify-center">
-        <div
-          style={{
-            background: `linear-gradient(to ${align}, ${gradient.colors[0]}, ${gradient.colors[1]})`,
-          }}
-          className="w-11/12 lg:w-[85%] h-[50vh] lg:h-[85%] flex items-center justify-center rounded-md gradient-shadow py-10 lg:py-0"
-        ></div>
-      </div>
-      <div className="py-8 rounded-md w-11/12 lg:w-8/12 mx-auto mb-[44px] flex items-start justify-center flex-col px-6 bg-white gradient-shadow dark:bg-[#333] border dark:border-[#444]">
-        <div className="flex items-center gap-3 mb-[12px]">
-          <Tooltip title={`Copy ${gradient.colors[0]}`}>
+      {gradient && (
+        <>
+          <div className="">
+            {/* <ComponentToPrint ref={componentRef} /> */}
+          </div>
+          <div className="h-full lg:h-[87vh] w-full flex items-center justify-center">
             <div
-              className="font-medium w-[40px] h-[40px] rounded-[50%]"
-              onClick={() => copySingleColor(gradient.colors[0])}
-              style={{ background: `${gradient.colors[0]}` }}
+              style={{
+                background: `linear-gradient(to ${align}, ${gradient.colors[0]}, ${gradient.colors[1]})`,
+              }}
+              className="w-11/12 lg:w-[85%] h-[50vh] lg:h-[85%] flex items-center justify-center rounded-md gradient-shadow py-10 lg:py-0"
             ></div>
-          </Tooltip>
+          </div>
+          <div className="py-8 rounded-md w-11/12 lg:w-8/12 mx-auto mb-[44px] flex items-start justify-center flex-col px-6 bg-white gradient-shadow dark:bg-[#333] border dark:border-[#444]">
+            <div className="flex items-center gap-3 mb-[12px]">
+              <Tooltip title={`Copy ${gradient.colors[0]}`}>
+                <div
+                  className="font-medium w-[40px] h-[40px] rounded-[50%]"
+                  onClick={() => copySingleColor(gradient.colors[0])}
+                  style={{ background: `${gradient.colors[0]}` }}
+                ></div>
+              </Tooltip>
 
-          <Tooltip title={`Copy ${gradient.colors[1]}`}>
-            <div
-              className="font-medium w-[40px] h-[40px] rounded-[50%]"
-              onClick={() => copySingleColor(gradient.colors[1])}
-              style={{ background: `${gradient.colors[1]}` }}
-            ></div>
-          </Tooltip>
+              <Tooltip title={`Copy ${gradient.colors[1]}`}>
+                <div
+                  className="font-medium w-[40px] h-[40px] rounded-[50%]"
+                  onClick={() => copySingleColor(gradient.colors[1])}
+                  style={{ background: `${gradient.colors[1]}` }}
+                ></div>
+              </Tooltip>
 
-          <Tooltip title={`Copy ${gradient.colors[2]}`}>
-            <div
-              className="font-medium w-[40px] h-[40px] rounded-[50%]"
-              onClick={() => copySingleColor(gradient.colors[2])}
-              style={{ background: `${gradient.colors[2]}` }}
-            ></div>
-          </Tooltip>
-        </div>
-        <div className="w-full overflow-hidden rounded-md h-40 mt-2">
-          <CodeMirror
-            value={CSS}
-            options={{
-              mode: "css",
-              lineWrapping: true,
-              theme: "material-palenight",
-              lineNumbers: true,
+              <Tooltip title={`Copy ${gradient.colors[2]}`}>
+                <div
+                  className="font-medium w-[40px] h-[40px] rounded-[50%]"
+                  onClick={() => copySingleColor(gradient.colors[2])}
+                  style={{ background: `${gradient.colors[2]}` }}
+                ></div>
+              </Tooltip>
+            </div>
+            <div className="w-full overflow-hidden rounded-md h-40 mt-2">
+              <CodeMirror
+                value={CSS}
+                options={{
+                  mode: "css",
+                  lineWrapping: true,
+                  theme: "material-palenight",
+                  lineNumbers: true,
+                }}
+              />
+            </div>
+
+            <div className="flex items-center gap-5 mt-[24px]">
+              <Tooltip title="Copy CSS">
+                <div
+                  onClick={copyCSS}
+                  className="overflow-hidden cursor-pointer flex items-center justify-center transition duration-300 dark:text-white"
+                >
+                  <div className="flex items-center justify-center overflow-hidden">
+                    <h1 className="font-Epilogue text-[18px] continuous-line font-medium">
+                      Copy CSS
+                    </h1>
+                  </div>
+                </div>
+              </Tooltip>
+
+              <Tooltip title="Copy Text CSS">
+                <div
+                  onClick={copytextCSS}
+                  className="overflow-hidden cursor-pointer flex items-center justify-center transition duration-300 dark:text-white"
+                >
+                  <div className="flex items-center justify-center overflow-hidden">
+                    <h1 className="font-Epilogue text-[18px] continuous-line font-medium">
+                      Copy Text CSS
+                    </h1>
+                  </div>
+                </div>
+              </Tooltip>
+
+              <Tooltip title="Rotate Gradient">
+                <div
+                  onClick={rotate}
+                  className="overflow-hidden cursor-pointer flex items-center justify-center transition duration-300 dark:text-white"
+                >
+                  <div className="flex items-center justify-center overflow-hidden">
+                    <h1 className="font-Epilogue text-[18px] continuous-line font-medium">
+                      Rotate Gradient
+                    </h1>
+                  </div>
+                </div>
+              </Tooltip>
+
+              <Tooltip title="Save Gradient">
+                <div
+                  className="overflow-hidden cursor-pointer flex items-center justify-center rounded-md border border-[#eee] bg-gray-100 transition duration-500 hover:bg-gray-200 dark:border-[#555] dark:bg-[#181718]"
+                  onClick={saveGradient}
+                >
+                  <div className="w-40 h-9 flex items-center justify-center overflow-hidden">
+                    {isBookMarked ? (
+                      <BsBookmarkCheck className="text-[1.3rem] text-[#fec821]]" />
+                    ) : (
+                      <BsBookmarkPlus className="text-[1.3rem] dark:text-[#fafafa]" />
+                    )}
+
+                    {isBookMarked ? (
+                      <h3 className="ml-1 text-sm lg:text-lg font-semibold capitalize text-[#fec821] font-Epilogue">
+                        Saved
+                      </h3>
+                    ) : (
+                      <h3 className="ml-1 text-sm lg:text-lg font-semibold capitalize font-Epilogue dark:text-[#fafafa]">
+                        Save Gradient
+                      </h3>
+                    )}
+                  </div>
+                </div>
+              </Tooltip>
+
+              <Tooltip title="Download Gradient">
+                <div
+                  onClick={() =>
+                    exportComponentAsPNG(componentRef, {
+                      fileName: "gradient.png",
+                    })
+                  }
+                  className="overflow-hidden cursor-pointer flex items-center justify-center rounded-md border border-[#eee] bg-gray-100 transition duration-500 hover:bg-gray-200 dark:border-[#555] dark:bg-[#181718]"
+                >
+                  <div className="w-40 h-9 flex items-center justify-center overflow-hidden">
+                    <BsDownload className="text-[1.3rem] dark:text-[#fafafa]" />
+                    <h3 className="ml-1 text-sm lg:text-lg font-semibold font-Epilogue capitalize dark:text-[#fafafa]">
+                      Download
+                    </h3>
+                  </div>
+                </div>
+              </Tooltip>
+            </div>
+          </div>
+
+          <h1
+            className="text-[60px] text-center font-black text-Epilogue text-gradient mb-[80px]"
+            style={{
+              backgroundImage: `linear-gradient(to ${align}, ${gradient.colors[0]}, ${gradient.colors[1]})`,
             }}
-          />
-        </div>
-
-        <div className="flex items-center gap-5 mt-[24px]">
-          <Tooltip title="Copy CSS">
-            <div
-              onClick={copyCSS}
-              className="overflow-hidden cursor-pointer flex items-center justify-center transition duration-300 dark:text-white"
-            >
-              <div className="flex items-center justify-center overflow-hidden">
-                <h1 className="font-Epilogue text-[18px] continuous-line font-medium">
-                  Copy CSS
-                </h1>
-              </div>
-            </div>
-          </Tooltip>
-
-          <Tooltip title="Copy Text CSS">
-            <div
-              onClick={copytextCSS}
-              className="overflow-hidden cursor-pointer flex items-center justify-center transition duration-300 dark:text-white"
-            >
-              <div className="flex items-center justify-center overflow-hidden">
-                <h1 className="font-Epilogue text-[18px] continuous-line font-medium">
-                  Copy Text CSS
-                </h1>
-              </div>
-            </div>
-          </Tooltip>
-
-          <Tooltip title="Rotate Gradient">
-            <div
-              onClick={rotate}
-              className="overflow-hidden cursor-pointer flex items-center justify-center transition duration-300 dark:text-white"
-            >
-              <div className="flex items-center justify-center overflow-hidden">
-                <h1 className="font-Epilogue text-[18px] continuous-line font-medium">
-                  Rotate Gradient
-                </h1>
-              </div>
-            </div>
-          </Tooltip>
-
-          <Tooltip title="Save Gradient">
-            <div
-              className="overflow-hidden cursor-pointer flex items-center justify-center rounded-md border border-[#eee] bg-gray-100 transition duration-500 hover:bg-gray-200 dark:border-[#555] dark:bg-[#181718]"
-              onClick={saveGradient}
-            >
-              <div className="w-40 h-9 flex items-center justify-center overflow-hidden">
-                {isBookMarked ? (
-                  <BsBookmarkCheck className="text-[1.3rem] text-[#fec821]]" />
-                ) : (
-                  <BsBookmarkPlus className="text-[1.3rem] dark:text-[#fafafa]" />
-                )}
-
-                {isBookMarked ? (
-                  <h3 className="ml-1 text-sm lg:text-lg font-semibold capitalize text-[#fec821] font-Epilogue">
-                    Saved
-                  </h3>
-                ) : (
-                  <h3 className="ml-1 text-sm lg:text-lg font-semibold capitalize font-Epilogue dark:text-[#fafafa]">
-                    Save Gradient
-                  </h3>
-                )}
-              </div>
-            </div>
-          </Tooltip>
-
-          <Tooltip title="Download Gradient">
-            <div
-              onClick={() =>
-                exportComponentAsPNG(componentRef, {
-                  fileName: "gradient.png",
-                })
-              }
-              className="overflow-hidden cursor-pointer flex items-center justify-center rounded-md border border-[#eee] bg-gray-100 transition duration-500 hover:bg-gray-200 dark:border-[#555] dark:bg-[#181718]"
-            >
-              <div className="w-40 h-9 flex items-center justify-center overflow-hidden">
-                <BsDownload className="text-[1.3rem] dark:text-[#fafafa]" />
-                <h3 className="ml-1 text-sm lg:text-lg font-semibold font-Epilogue capitalize dark:text-[#fafafa]">
-                  Download
-                </h3>
-              </div>
-            </div>
-          </Tooltip>
-        </div>
-      </div>
-
-      <h1
-        className="text-[60px] text-center font-black text-Epilogue text-gradient mb-[80px]"
-        style={{
-          backgroundImage: `linear-gradient(to ${align}, ${gradient.colors[0]}, ${gradient.colors[1]})`,
-        }}
-      >
-        Gradientify
-      </h1>
+          >
+            Gradientify
+          </h1>
+        </>
+      )}
     </div>
   );
 };

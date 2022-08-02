@@ -267,7 +267,7 @@ const IndividualGradientPage = ({ savedGradients, setSavedGradients }) => {
       {gradient && (
         <>
           <div className="opacity-0">
-            <ComponentToPrint ref={componentRef} />
+            {/* <ComponentToPrint ref={componentRef} /> */}
           </div>
           <div className="h-full lg:h-[87vh] w-full flex items-center justify-center">
             <div
@@ -316,7 +316,7 @@ const IndividualGradientPage = ({ savedGradients, setSavedGradients }) => {
               />
             </div>
 
-            <div className="flex items-center gap-5 mt-[24px]">
+            <div className="flex flex-wrap items-center gap-5 mt-[24px]">
               <Tooltip title="Copy CSS">
                 <div
                   onClick={copyCSS}

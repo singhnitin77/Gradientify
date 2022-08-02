@@ -20,7 +20,7 @@ const NavHeader = ({ searchTerm, setSearchTerm }) => {
     useGlobalContext();
 
   return (
-    <div className="w-full py-5 px-4 lg:px-8 bg-white dark:bg-[#1f1f1f] rounded-md flex items-center justify-center flex-col-reverse xl:justify-between lg:justify-between lg:flex-row xl:flex-row">
+    <div className="w-full py-5 px-4 lg:px-8 bg-white dark:bg-[#1f1f1f] flex items-center justify-center flex-col-reverse xl:justify-between lg:justify-between lg:flex-row xl:flex-row">
       <div className="flex items-center gap-4 w-full lg:w-5/12 xl:w-5/12 justify-center lg:justify-start mt-2 xl:mt-0 lg:mt-0">
         <Link to="/">
           <div className="border border-[#ddd] hover:border-[#3D5EFF] dark:text-white duration-300 transition px-3 lg:px-3 py-[10px] capitalize rounded-lg dark:border-[#555]">
@@ -71,7 +71,7 @@ const NavHeader = ({ searchTerm, setSearchTerm }) => {
 
         <button className="rounded-md">
           <div
-            className="border border-[#ddd] hover:border-[#3d5eff] text-[#3d5eff] duration-500 px-3 pl-4 py-[10px] text-lg capitalize rounded-lg font-semibold flex items-center justify-center dark:border-[#555] dark:text-white menu-animation-hover"
+            className="border border-[#ddd] hover:border-[#3d5eff] text-[#3d5eff] duration-500 px-3 py-[10px] text-lg capitalize rounded-lg font-semibold flex items-center justify-center dark:border-[#555] dark:text-white menu-animation-hover"
             onClick={toggleDarkMode}
           >
             {darkMode ? (

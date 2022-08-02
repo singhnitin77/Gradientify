@@ -67,10 +67,13 @@ const IndividualGradientPage = ({ savedGradients, setSavedGradients }) => {
         ? `background: ${val.colors[0]}; \nbackground: -webkit-linear-gradient(to ${align}, ${val.colors[0]}, ${val.colors[1]},${val.colors[2]}); \nbackground: linear-gradient(to ${align}, ${val.colors[0]}, ${val.colors[1]},${val.colors[2]}); `
         : `background: ${val.colors[0]}; \nbackground: -webkit-linear-gradient(to ${align}, ${val.colors[0]}, ${val.colors[1]}); \nbackground: linear-gradient(to ${align}, ${val.colors[0]}, ${val.colors[1]});`;
 
-      let textCSSVal =
-        val.colors &&
-        `background: -webkit-linear-gradient(to ${align}, ${val.colors[0]}, ${val.colors[1]},${val.colors[2]});  
+      let textCSSVal = val.colors[2]
+        ? `background: -webkit-linear-gradient(to ${align}, ${val.colors[0]}, ${val.colors[1]},${val.colors[2]});  
       background: linear-gradient(to ${align}, ${val.colors[0]}, ${val.colors[1]},${val.colors[2]});
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;`
+        : `background: -webkit-linear-gradient(to ${align}, ${val.colors[0]}, ${val.colors[1]});  
+      background: linear-gradient(to ${align}, ${val.colors[0]}, ${val.colors[1]});
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;`;
       setCSS(cssVal);

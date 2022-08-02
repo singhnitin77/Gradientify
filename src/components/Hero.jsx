@@ -65,15 +65,13 @@ const Hero = () => {
                   data-depth="0.3"
                   className="h-[195px] w-[344px] lg:h-[340px] lg:w-[604px] rounded-md border border-[#B84F90]"
                 />
+                {/* <div classname="bgimage z-999 bg-cover bg-center p-4 absolute left-0 right-0 mx-auto top-[30%] transform duration-500 hover:scale-125 cursor-pointer border border-[#f5ba32]">
+                  <BsFillPlayFill className="text-white text-3xl" />
+                </div> */}
               </div>
-              {/* <div
-                classname="bg-image z-999 bg-cover bg-center bg-no-repeat p-4 absolute absolute-center transform duration-500 hover:scale-125 cursor-pointer border border-[#f5ba32]"
-                onClick={() => setShowYt(true)}
-              >
-                <BsFillPlayFill className="text-white text-3xl" />
-              </div> */}
+
               <button onClick={openModal} className="">
-                <div classname="bg-image z-999 bg-cover bg-center bg-no-repeat p-4 absolute absolute-center transform duration-500 hover:scale-125 cursor-pointer border border-[#f5ba32]">
+                <div classname="bg-image2 bg-cover rounded-[50%] bg-center p-4 absolute left-0 right-0 mx-auto top-[30%] transform duration-500 hover:scale-125 cursor-pointer border border-[#f5ba32]">
                   <BsFillPlayFill className="text-white text-3xl" />
                 </div>
                 {modal ? (

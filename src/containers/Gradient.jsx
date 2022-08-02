@@ -147,7 +147,7 @@ const Gradient = ({ gradient, align, savedGradients, setSavedGradients }) => {
             </div>
           )}
 
-          <div
+          {/* <div
             onClick={() => saveGradient(gradient.id)}
             className="w-10 overflow-hidden flex items-center justify-center rounded-md ml-1 bg-white z-1 dark:border-[#777] dark:bg-[#222] z-[3]"
           >
@@ -162,9 +162,25 @@ const Gradient = ({ gradient, align, savedGradients, setSavedGradients }) => {
                 </div>
               </Button>
             </Tooltip>
-          </div>
+          </div> */}
         </div>
       </Link>
+      <div
+        onClick={() => saveGradient(gradient.id)}
+        className="w-10 absolute top-2 right-2 overflow-hidden flex items-center justify-center rounded-md ml-1 bg-white z-1 dark:border-[#777] dark:bg-[#222] z-[3]"
+      >
+        <Tooltip title="Save Gradient">
+          <Button className="btn">
+            <div className="w-full h-9 flex items-center justify-center overflow-hidden">
+              {isBookMarked ? (
+                <BsBookmarkCheck className="text-[1.3rem] text-[#ffdd00]" />
+              ) : (
+                <BsBookmarkPlus className="text-[1.3rem] dark:text-[#fafafa]" />
+              )}
+            </div>
+          </Button>
+        </Tooltip>
+      </div>
 
       <div className="w-full flex items-center justify-between p-[18px]">
         <div className="flex items-center uppercase gap-x-2">

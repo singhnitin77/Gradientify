@@ -247,7 +247,7 @@ const IndividualGradientPage = ({ savedGradients, setSavedGradients }) => {
     //     </div>
     //   </div>
     // </div>
-    <div className="">
+    <div>
       <div className="">{/* <ComponentToPrint ref={componentRef} /> */}</div>
       <div className="h-full lg:h-[87vh] w-full flex items-center justify-center">
         <div

@@ -61,7 +61,7 @@ const TintsandShades = () => {
             />
             <button
               type="submit"
-              class="text-white font-Epilogue text-[18px] font-semibold bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:outline-none rounded-lg px-[24px] py-[12px] text-center mr-2 mb-2"
+              className="text-white font-Epilogue text-[18px] font-semibold bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:outline-none rounded-lg px-[24px] py-[12px] text-center mr-2 mb-2"
             >
               Generate
             </button>
@@ -86,7 +86,7 @@ const TintsandShades = () => {
           />
           <span
             style={{ width: 60 }}
-            class="self-center text-xl font-bold px-3 py-2 bg-gray-100 border text-center rounded ml-3"
+            className="self-center text-xl font-bold px-3 py-2 bg-gray-100 border text-center rounded ml-3"
           >
             {shades}
           </span>

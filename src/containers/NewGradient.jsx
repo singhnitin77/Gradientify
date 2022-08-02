@@ -55,10 +55,10 @@ const NewGradient = () => {
         <div className="flex items-center justify-center mt-[24px]">
           <button
             type="button"
-            class="text-white bg-[#24292F] hover:bg-[#24292F]/90 focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium font-Epilogue rounded-lg text-[18px] px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-500 dark:hover:bg-[#050708]/30 mr-2 mb-2"
+            className="text-white bg-[#24292F] hover:bg-[#24292F]/90 focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium font-Epilogue rounded-lg text-[18px] px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-500 dark:hover:bg-[#050708]/30 mr-2 mb-2"
           >
             <svg
-              class="mr-2 -ml-1 w-7 h-7"
+              className="mr-2 -ml-1 w-7 h-7"
               aria-hidden="true"
               focusable="false"
               data-prefix="fab"

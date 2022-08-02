@@ -141,7 +141,7 @@
 //                           type="file"
 //                           id="file"
 //                           name="file"
-//                           class="file"
+//                           className="file"
 //                           onChange={onChange}
 //                         />
 //                         <label

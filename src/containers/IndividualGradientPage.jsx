@@ -76,7 +76,7 @@ const IndividualGradientPage = ({ savedGradients, setSavedGradients }) => {
       setCSS(cssVal);
       setTextCSS(textCSSVal);
     }
-  }, [gradients, loading, id , align]);
+  }, [gradients, loading, id, align]);
 
   console.log(gradient);
 

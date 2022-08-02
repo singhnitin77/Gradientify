@@ -80,6 +80,13 @@ const IndividualGradientPage = ({ savedGradients, setSavedGradients }) => {
 
   console.log(gradient);
 
+  let background;
+  if (gradient.colors.length > 2) {
+    background = `linear-gradient(to ${align}, ${gradient.colors[0]}, ${gradient.colors[1]},${gradient.colors[2]})`;
+  } else {
+    background = `linear-gradient(to ${align}, ${gradient.colors[0]}, ${gradient.colors[1]})`;
+  }
+
   const ComponentToPrint = forwardRef((props, ref) => (
     <div
       className="h-[400px] w-[200px] lg:h-[1200px] lg:w-[630px] overflow-hidden absolute z-[-10]"
@@ -87,7 +94,7 @@ const IndividualGradientPage = ({ savedGradients, setSavedGradients }) => {
       style={{
         height: "630px",
         width: "1200px",
-        background: `linear-gradient(to ${align}, ${gradient.colors[0]}, ${gradient.colors[1]})`,
+        background: `${background}`,
       }}
     ></div>
   ));
@@ -140,13 +147,6 @@ const IndividualGradientPage = ({ savedGradients, setSavedGradients }) => {
   useEffect(() => {
     fetchSavedGradients();
   });
-
-  let background;
-  if (gradient.colors.length > 2) {
-    background = `linear-gradient(to ${align}, ${gradient.colors[0]}, ${gradient.colors[1]},${gradient.colors[2]})`;
-  } else {
-    background = `linear-gradient(to ${align}, ${gradient.colors[0]}, ${gradient.colors[1]})`;
-  }
 
   return (
     // <div className="flex items-center justify-center h-full lg:h-[87vh] w-full">

@@ -9,7 +9,7 @@ const Contributors = () => {
   const fetchContributors = () => {
     axios
       .get(
-        "https://api.github.com/repos/singhnitin77/designerslobby/contributors",
+        "https://api.github.com/repos/singhnitin77/gradientify/contributors",
         {
           headers: {},
         }

@@ -5,12 +5,6 @@ import { useGlobalContext } from "../context/Context";
 import { Gradient } from "../containers";
 import { useOutletContext } from "react-router-dom";
 
-// aos
-import Aos from "aos";
-import "aos/dist/aos.css";
-
-// animate.css
-import "animate.css";
 import { useGradient } from "../context/GradientContext";
 
 const AllGradients = ({ savedGradients, setSavedGradients }) => {

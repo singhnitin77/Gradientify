@@ -71,7 +71,7 @@ const Hero = () => {
               </div>
 
               <button onClick={openModal} className="">
-                <div className="bg-image bg-cover rounded-[50%] bg-center p-4 absolute left-1/2 mx-auto top-1/2 transform -translate-x-1/2 -translate-y-1/2 duration-500 hover:scale-125 cursor-pointer border border-[#f5ba32]">
+                <div className="hero-container4 bg-cover rounded-[50%] bg-center p-4 absolute left-1/2 mx-auto top-1/2 transform -translate-x-1/2 -translate-y-1/2 duration-500 hover:scale-125 cursor-pointer border border-[#f5ba32]">
                   <BsFillPlayFill className="text-white text-3xl" />
                 </div>
                 {modal ? (

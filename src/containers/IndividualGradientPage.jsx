@@ -141,6 +141,13 @@ const IndividualGradientPage = ({ savedGradients, setSavedGradients }) => {
     fetchSavedGradients();
   });
 
+  let background;
+  if (gradient.colors.length > 2) {
+    background = `linear-gradient(to ${align}, ${gradient.colors[0]}, ${gradient.colors[1]},${gradient.colors[2]})`;
+  } else {
+    background = `linear-gradient(to ${align}, ${gradient.colors[0]}, ${gradient.colors[1]})`;
+  }
+
   return (
     // <div className="flex items-center justify-center h-full lg:h-[87vh] w-full">
     //   {/* <ComponentToPrint ref={componentRef} /> */}
@@ -255,14 +262,15 @@ const IndividualGradientPage = ({ savedGradients, setSavedGradients }) => {
     <div>
       {gradient && (
         <>
-          <div className="">
-            {/* <ComponentToPrint ref={componentRef} /> */}
+          <div className="opacity-0">
+            <ComponentToPrint ref={componentRef} />
           </div>
           <div className="h-full lg:h-[87vh] w-full flex items-center justify-center">
             <div
-              style={{
-                background: `linear-gradient(to ${align}, ${gradient.colors[0]}, ${gradient.colors[1]})`,
-              }}
+              // style={{
+              //   background: `linear-gradient(to ${align}, ${gradient.colors[0]}, ${gradient.colors[1]})`,
+              // }}
+              style={{ background: `${background}` }}
               className="w-11/12 lg:w-[85%] h-[50vh] lg:h-[85%] flex items-center justify-center rounded-md gradient-shadow py-10 lg:py-0"
             ></div>
           </div>
@@ -392,7 +400,7 @@ const IndividualGradientPage = ({ savedGradients, setSavedGradients }) => {
           <h1
             className="text-[60px] text-center font-black text-Epilogue text-gradient mb-[80px]"
             style={{
-              backgroundImage: `linear-gradient(to ${align}, ${gradient.colors[0]}, ${gradient.colors[1]})`,
+              backgroundImage: `${background}`,
             }}
           >
             Gradientify

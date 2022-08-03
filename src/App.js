@@ -37,11 +37,9 @@ const App = () => {
   Aos.init();
   return (
     <div className={`${darkMode && "dark"}`}>
-      <div>
-        <Toaster />
-      </div>
       <Router>
-        <ScrollToTop />
+        <Toaster />
+        {/* <ScrollToTop /> */}
         <Navbar />
 
         <Routes>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import toast from "react-hot-toast";
 import { FiSend } from "react-icons/fi";
 import ConfettiGenerator from "confetti-js";
+import axios from "axios";
 
 const Newsletter = () => {
   const [email, setEmail] = useState("");
@@ -13,6 +14,23 @@ const Newsletter = () => {
 
     return () => confetti.clear();
   });
+
+  //submit handler
+  const submitHandler = async (e) => {
+    e.preventDefault();
+    await axios
+      .post("/email", {
+        email,
+      })
+      .then((res) => {
+        console.log(res);
+        toast.success("Successfully saved");
+      })
+      .catch((err) => {
+        console.log(err);
+        toast.error("Email already saved");
+      });
+  };
 
   return (
     <div className="hero-container4 h-auto w-full px-[25px]">
@@ -28,12 +46,16 @@ const Newsletter = () => {
           <div className="w-full p-[2px] bg-app-gradient-2 mt-4 rounded-md">
             <form
               action=""
-              className="bg-[#0a0719] flex duration-500 focus:border-[#3d5eff] pl-3 rounded-lg p-1 w-full items-center justify-between"
+              className="bg-[#f0eef9] flex duration-500 focus:border-[#3d5eff] pl-3 rounded-lg p-1 w-full items-center justify-between"
+              onSubmit={submitHandler}
             >
               <input
-                type="text"
+                type="email"
                 placeholder="Enter your email address"
-                className="h-full py-1 pl-1 w-full bg-transparent font-Epilogue placeholder:font-Epilogue text-white text-sm lg:text-base focus:outline-none appearance-none"
+                className="h-full py-1 pl-1 w-full bg-transparent font-Epilogue placeholder:font-Epilogue  text-sm lg:text-base focus:outline-none appearance-none"
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                }}
               />
               <div className="bg-[#764dff] p-2 lg:p-3 cursor:pointer shine rounded-lg text-sm lg:text-base">
                 <FiSend

@@ -8,8 +8,8 @@ import axios from "axios";
 import { GradientContextProvider } from "./context/GradientContext";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 
-// axios.defaults.baseURL = "http://localhost:8000";
-axios.defaults.baseURL = "https://gradientify-backend.vercel.app";
+axios.defaults.baseURL = "http://localhost:8000";
+// axios.defaults.baseURL = "https://gradientify-backend.vercel.app";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

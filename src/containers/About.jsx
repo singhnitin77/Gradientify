@@ -38,9 +38,9 @@ const About = () => {
           </p>
 
           <p className="text-left text-[16px] md:text-[18px] font-Epilogue text-[#5B6478] font-medium mt-[42px]">
-            You can also make tints and shades of a single color to get lighter
-            and darker variations of any color right in the browser. Also,
-            generate a nice color gradient using a gradient generator
+            Also make tints and shades of a single color to get lighter and
+            darker variations of any color right in the browser. Also, generate
+            a nice color gradient using a gradient generator
           </p>
 
           <p className="text-left text-[16px] md:text-[18px] font-Epilogue text-[#5B6478] font-medium mt-[42px] mb-[92px]">

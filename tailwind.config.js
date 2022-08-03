@@ -10,6 +10,7 @@ module.exports = {
       backgroundImage: {
         image: "url('../src/assets/background.png')",
         image2: "url('../src/assets/background2.jfif')",
+        hero: "url('../src/assets/hero-bg.jpg')",
       },
     },
     screens: {

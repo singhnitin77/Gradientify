@@ -39,7 +39,7 @@ const App = () => {
     <div className={`${darkMode && "dark"}`}>
       <Router>
         <Toaster />
-        <ScrollToTop />
+        {/* <ScrollToTop /> */}
         <Navbar />
 
         <Routes>

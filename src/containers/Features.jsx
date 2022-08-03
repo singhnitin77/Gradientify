@@ -18,51 +18,52 @@ import { HiOutlineMail } from "react-icons/hi";
 const Features = () => {
   const features = [
     {
-      name: "1300 Resources",
+      name: "100+ Gradients",
       description:
-        "DesignersLobby is world's biggest collection of best design Resources & Tools.",
+        "100+ trendy and beautifull, carefully crafted gradients for your next projects.",
       icon: <FiDatabase className="text-2xl lg:text-4xl xl:text-4xl" />,
     },
 
     {
-      name: "Category Filter",
+      name: "Save Gradients",
       description:
-        "By filtering by categories, you can find what you are looking for more easily.",
+        "You can bookmark your favorite gradients so that you don't have to search every time.",
       icon: <FiFilter className="text-2xl lg:text-4xl xl:text-4xl" />,
     },
     {
-      name: "Search Filter",
-      description: "You can filter resources and tools by Search Filter.",
+      name: "Copy CSS",
+      description:
+        "Copy CSS, CSS text Code Snippets directly into your projects.",
       icon: <FiSearch className="text-2xl lg:text-4xl xl:text-4xl" />,
     },
     {
-      name: "Add new Resource",
+      name: "Add new Gradient",
       description:
-        "You can add a new resource to designers Lobby, in the new resource section.",
+        "You can add a new gradient to gradientify, by making a pull request",
       icon: <FiPlusCircle className="text-2xl lg:text-4xl xl:text-4xl" />,
     },
     {
-      name: "Clean User Interface",
+      name: "Install PWA",
       description:
-        "Designers Lobby is crafted with a minimal, intuitive, and sleek design.",
+        "Install PWA version of gradientify to have a fast app-like experience",
       icon: <FiPenTool className="text-2xl lg:text-4xl xl:text-4xl" />,
     },
     {
-      name: "Newsletter feature",
+      name: "Generate Gradient",
       description:
-        "Subscribe to our minimal and beautiful newsletter to get 5 fresh resources",
+        "Generate a nice color gradient using the gradient generator and copy CSS.",
       icon: <HiOutlineMail className="text-2xl lg:text-4xl xl:text-4xl" />,
     },
     {
-      name: "Contributors Page",
+      name: "Make tints & Shades",
       description:
-        "Our contributors are proudly displayed on our contributor's page.",
+        "Generate lighter and darker variations of any color right in the browser.",
       icon: <FiUsers className="text-2xl lg:text-4xl xl:text-4xl" />,
     },
     {
-      name: "Trending Resources",
+      name: "Download PNGs",
       description:
-        "Dedicated section for latest and trending design resources and tools",
+        "Export gradients to a PNG file ready to use in your projects",
       icon: <FiTrendingUp className="text-2xl lg:text-4xl xl:text-4xl" />,
     },
     {

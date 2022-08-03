@@ -266,8 +266,8 @@ const IndividualGradientPage = ({ savedGradients, setSavedGradients }) => {
     <div>
       {gradient && (
         <>
-          <div className="overflow-hidden opacity-0">
-            {/* <ComponentToPrint ref={componentRef} className="overflow-hidden" /> */}
+          <div className="overflow-scroll w-screen opacity-0">
+            <ComponentToPrint ref={componentRef} className="overflow-hidden" />
           </div>
           <div className="h-full lg:h-[87vh] mt-[44px] w-full flex items-center justify-center">
             <div

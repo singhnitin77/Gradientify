@@ -18,6 +18,10 @@ const Newsletter = () => {
   //submit handler
   const submitHandler = async (e) => {
     e.preventDefault();
+    if (!email) {
+      return toast.error("Please enter email");
+    }
+
     await axios
       .post("/email", {
         email,
@@ -25,6 +29,7 @@ const Newsletter = () => {
       .then((res) => {
         console.log(res);
         toast.success("Successfully saved");
+        setEmail("");
       })
       .catch((err) => {
         console.log(err);
@@ -56,13 +61,17 @@ const Newsletter = () => {
                 onChange={(e) => {
                   setEmail(e.target.value);
                 }}
+                value={email}
               />
-              <div className="bg-[#764dff] p-2 lg:p-3 cursor:pointer shine rounded-lg text-sm lg:text-base">
+              <button
+                type="submit"
+                className="bg-[#764dff] p-2 lg:p-3 cursor:pointer shine rounded-lg text-sm lg:text-base"
+              >
                 <FiSend
                   className="text-white -ml-1"
                   style={{ transform: "rotate(45deg" }}
                 />
-              </div>
+              </button>
             </form>
           </div>
           <h3 className="bg-text-gradient font-semibold mb-2 uppercase mt-2 tracking-wider text-sm lg:text-base">

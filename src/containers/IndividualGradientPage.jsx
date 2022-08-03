@@ -93,11 +93,9 @@ const IndividualGradientPage = ({ savedGradients, setSavedGradients }) => {
 
   const ComponentToPrint = forwardRef((props, ref) => (
     <div
-      className="h-[400px] w-[200px] lg:h-[1200px] lg:w-[630px] overflow-hidden absolute z-[-10]"
+      className="h-[400px] w-[200px] lg:w-[1200px] lg:h-[630px] overflow-hidden absolute z-[-10]"
       ref={ref}
       style={{
-        height: "630px",
-        width: "1200px",
         background: `${background}`,
       }}
     ></div>
@@ -266,7 +264,7 @@ const IndividualGradientPage = ({ savedGradients, setSavedGradients }) => {
     <div>
       {gradient && (
         <>
-          <div className="opacity-0">
+          <div className="opacity-0 w-[0] h-[0] overflow-auto">
             <ComponentToPrint ref={componentRef} />
           </div>
           <div className="h-full lg:h-[87vh] w-full flex items-center justify-center">
@@ -316,7 +314,7 @@ const IndividualGradientPage = ({ savedGradients, setSavedGradients }) => {
               />
             </div>
 
-            <div className="flex items-center gap-5 mt-[24px]">
+            <div className="flex items-center flex-wrap gap-5 mt-[24px]">
               <Tooltip title="Copy CSS">
                 <div
                   onClick={copyCSS}

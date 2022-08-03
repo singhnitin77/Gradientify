@@ -10,10 +10,16 @@ import {
   FiTrendingUp,
   FiFilter,
   FiUser,
+  FiCode,
+  FiSave,
   FiSearch,
   FiPenTool,
+  FiDownload,
 } from "react-icons/fi";
+import { FaDownload, FaHighlighter } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
+import { MdExitToApp } from "react-icons/md";
+import { BsRainbow } from "react-icons/bs";
 
 const Features = () => {
   const features = [
@@ -28,13 +34,13 @@ const Features = () => {
       name: "Save Gradients",
       description:
         "You can bookmark your favorite gradients so that you don't have to search every time.",
-      icon: <FiFilter className="text-2xl lg:text-4xl xl:text-4xl" />,
+      icon: <FiSave className="text-2xl lg:text-4xl xl:text-4xl" />,
     },
     {
       name: "Copy CSS",
       description:
         "Copy CSS, CSS text Code Snippets directly into your projects.",
-      icon: <FiSearch className="text-2xl lg:text-4xl xl:text-4xl" />,
+      icon: <FiCode className="text-2xl lg:text-4xl xl:text-4xl" />,
     },
     {
       name: "Add new Gradient",
@@ -46,25 +52,25 @@ const Features = () => {
       name: "Install PWA",
       description:
         "Install PWA version of gradientify to have a fast app-like experience",
-      icon: <FiPenTool className="text-2xl lg:text-4xl xl:text-4xl" />,
+      icon: <MdExitToApp className="text-2xl lg:text-4xl xl:text-4xl" />,
     },
     {
       name: "Generate Gradient",
       description:
         "Generate a nice color gradient using the gradient generator and copy CSS.",
-      icon: <HiOutlineMail className="text-2xl lg:text-4xl xl:text-4xl" />,
+      icon: <BsRainbow className="text-2xl lg:text-4xl xl:text-4xl" />,
     },
     {
       name: "Make tints & Shades",
       description:
         "Generate lighter and darker variations of any color right in the browser.",
-      icon: <FiUsers className="text-2xl lg:text-4xl xl:text-4xl" />,
+      icon: <FaHighlighter className="text-2xl lg:text-4xl xl:text-4xl" />,
     },
     {
       name: "Download PNGs",
       description:
         "Export gradients to a PNG file ready to use in your projects",
-      icon: <FiTrendingUp className="text-2xl lg:text-4xl xl:text-4xl" />,
+      icon: <FiDownload className="text-2xl lg:text-4xl xl:text-4xl" />,
     },
     {
       name: "Dark Mode",
@@ -72,10 +78,9 @@ const Features = () => {
       icon: <FiMoon className="text-2xl lg:text-4xl xl:text-4xl" />,
     },
     {
-      name: "Built for Everyone",
-      description:
-        "Our aim is to help design teams, developers, content creators, & freelancers",
-      icon: <FiUser className="text-2xl lg:text-4xl xl:text-4xl" />,
+      name: "Search by Hex",
+      description: "Search your favorite gradients using the hex code",
+      icon: <FiSearch className="text-2xl lg:text-4xl xl:text-4xl" />,
     },
   ];
 

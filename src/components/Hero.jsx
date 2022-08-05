@@ -33,19 +33,20 @@ const Hero = () => {
 
   return (
     <>
-      {/* <div className="bg-image2 bg-cover bg-no-repeat bg-center"> */}
-      <div className="hero-container4">
+      <div className="bg-hero4 bg-cover bg-no-repeat bg-center">
+        {/* <div className="hero-container4"> */}
         <div className="flex flex-col md:flex-row px-[25px] md:px-[40px] py-[30px] md:py-[60px] h-auto min-h-[95vh] overflow-hidden transition duration-300">
           <YtVideo open={showYt} setOpen={setShowYt} />
           <div className="flex flex-1 justify-center items-start flex-col md:mr-[20px]">
-            <h1 className="font-Epilogue text-[36px] md:text-[46px] lg:text-[54px] leading-[1.1] md:leading-[1.25] font-extrabold text-[#ECF2F5]">
+            <h1 className="font-Epilogue text-[36px] md:text-[46px] lg:text-[54px] leading-[1.1] md:leading-[1.25] font-extrabold text-black">
               Find the Perfect gradient for your next projects
             </h1>
-            <p className="font-Epilogue leading-[1.35] text-[16px] md:text-[18px] lg:text-[20px] text-[#B5C0CC] font-medium mt-[20px] mb-[32px]">
-              Gradientify is an all-in-one tool that gives you access to 100+
-              carefully crafted gradients, generates gradients from an image,
-              creates your own gradient, and easily makes tints and shades of a
-              single color.
+            <p className="font-Epilogue leading-[1.35] text-[16px] md:text-[18px] lg:text-[20px] text-[#1f1f1f] font-medium mt-[20px] mb-[32px]">
+              Gradientify is a web-based all-in-one gradient editor that
+              provides 100+ trendy, beautiful, carefully crafted gradients for
+              your next projects. Copy CSS Snippet, Download PNGs, generates a
+              nice color gradient, and easily makes tints and shades of a single
+              color.
             </p>
             <div>
               <button className="bg-[#F5BA31] hover:bg-[#f7c85a] text-[#191925] font-Epilogue text-[18px] shine font-bold outline-none cursor-pointer flex items-cener justify-center px-[20px] py-[12px] rounded-[28px]">

@@ -8,9 +8,9 @@ module.exports = {
     },
     extend: {
       backgroundImage: {
-        image: "url('../src/assets/background.png')",
-        image2: "url('../src/assets/background2.jfif')",
-        hero: "url('../src/assets/hero-bg.jpg')",
+        hero1: "url('../src/assets/bg-aurora1.png')",
+        hero3: "url('../src/assets/bg-aurora3.png')",
+        hero4: "url('../src/assets/bg-aurora4.png')",
       },
     },
     screens: {

@@ -15,26 +15,39 @@ const Newsletter = () => {
     return () => confetti.clear();
   });
 
+  // regex to check whether email is valid or not
+  const is_email = (str) => {
+    var pattern = new RegExp(
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    );
+    return pattern.test(str);
+  };
+
   //submit handler
   const submitHandler = async (e) => {
     e.preventDefault();
+
     if (!email) {
-      return toast.error("Please enter email");
+      return toast.error("Please enter an email");
     }
 
-    await axios
-      .post("/email", {
-        email,
-      })
-      .then((res) => {
-        console.log(res);
-        toast.success("Successfully saved");
-        setEmail("");
-      })
-      .catch((err) => {
-        console.log(err);
-        toast.error("Email already saved");
-      });
+    if (is_email(email)) {
+      await axios
+        .post("/email", {
+          email,
+        })
+        .then((res) => {
+          console.log(res);
+          toast.success("Successfully saved");
+          setEmail("");
+        })
+        .catch((err) => {
+          console.log(err);
+          toast.error("Email already saved");
+        });
+    } else {
+      toast.error("Email is not valid");
+    }
   };
 
   return (

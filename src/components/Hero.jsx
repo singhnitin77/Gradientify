@@ -49,9 +49,12 @@ const Hero = () => {
               color.
             </p>
             <div>
-              <button className="bg-[#F5BA31] hover:bg-[#f7c85a] text-[#191925] font-Epilogue text-[18px] shine font-bold outline-none cursor-pointer flex items-cener justify-center px-[20px] py-[12px] rounded-[28px]">
+              <a
+                href="#try-gradientify"
+                className="bg-[#F5BA31] hover:bg-[#f7c85a] text-[#191925] font-Epilogue text-[18px] shine font-bold outline-none cursor-pointer flex items-cener justify-center px-[20px] py-[12px] rounded-[28px]"
+              >
                 Try Gradientify
-              </button>
+              </a>
             </div>
           </div>
 

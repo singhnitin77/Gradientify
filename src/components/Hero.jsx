@@ -97,10 +97,10 @@ const Hero = () => {
                             className="modal__video-style w-10/12 h-5/12 lg:w-[896px] lg:h-[504px] xl:w-[896px] xl:h-[504px]"
                             onLoad={spinner}
                             loading="lazy"
-                            width="800"
-                            height="500"
-                            src="https://www.youtube.com/embed/4UZrsTqkcW4"
-                            title="YouTube video player"
+                            width="956"
+                            height="538"
+                            src="https://www.youtube.com/embed/c9l9x53v13o"
+                            title="Gradientify"
                             frameBorder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen

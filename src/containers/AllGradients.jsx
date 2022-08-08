@@ -13,6 +13,10 @@ const AllGradients = ({ savedGradients, setSavedGradients }) => {
 
   const [searchTerm] = useOutletContext();
 
+  // if (loading) {
+  //   return <Loading />;
+  // }
+
   //   map method to be applied on gradients array while displaying
 
   return (
@@ -21,10 +25,10 @@ const AllGradients = ({ savedGradients, setSavedGradients }) => {
         id="try-gradientify"
         className="px-[30px] md:px-[72px] lg:px-[80px] py-[72px] md:py-[80px] lg:py-[92px] w-full bg-[#F5F9FF] dark:bg-[#333333] overflow-x-hidden"
       >
-        {/* <CategoryBanner /> */}
         <h1 className="text-[28px] md:text-[36px] w-full font-bold font-Epilogue text-center leading-[1.3] mb-[54px] md:mb-[72px] text-gradient-heading mx-auto md:w-7/12">
           100+ Carefully Crafted Gradients ready to use in your next projects.
         </h1>
+        {loading ? <Loading /> : null}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
           {gradients &&
             gradients

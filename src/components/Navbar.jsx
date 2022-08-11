@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FiMenu } from "react-icons/fi";
 import { BsSearch, BsX } from "react-icons/bs";
-import { FiMoon, FiSun } from "react-icons/fi";
 import { useGlobalContext } from "../context/Context";
 import logo from "../assets/logo.png";
 import { TwtBtn } from ".";
@@ -11,8 +10,6 @@ const Navbar = () => {
   const [showNav, setShowNav] = useState(false);
 
   const twtlink = "";
-
-  const { darkMode, setDarkMode, toggleDarkMode } = useGlobalContext();
 
   return (
     <div className="card navbar-container transition duration-300">

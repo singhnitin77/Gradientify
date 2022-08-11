@@ -5,7 +5,6 @@ import { FiBookOpen } from "react-icons/fi";
 
 const GradientifyBanner = () => {
   return (
-    // <div className="bg-cover bg-no-repeat bg-center bg-image">
     <div className="hero-container4">
       <div className="w-full text-center flex items-center md:items-center lg:items-center xl:items-center justify-center flex-col py-12 pl-5 lg:pl-0 xl:pl-0">
         <Link to="/">

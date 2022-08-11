@@ -129,15 +129,6 @@ const Gradient = ({ gradient, align, savedGradients, setSavedGradients }) => {
           className="h-[220px] w-full rounded-t-[10px] flex items-start justify-end p-2 relative overflow-hidden"
           style={{ background: `${background}` }}
         >
-          {/* {showCopyBg && (
-            <div className="absolute h-full w-full top-0 left-0 flex items-center justify-center">
-              <div className="w-[92.5%] h-[92.5%] rounded-md flex items-center justify-center flex-col">
-                <BsClipboard className="text-3xl text-[#fafafa]" />
-                <h3 className="text-[#fafafa] mt-2">Copied to Clipboard</h3>
-              </div>
-            </div>
-          )} */}
-
           {showSaveBg && (
             <div className="absolute h-full w-full top-0 left-0 flex items-center justify-center">
               <div className="w-[92.5%] h-[92.5%] rounded-md flex items-center justify-center flex-col">
@@ -146,23 +137,6 @@ const Gradient = ({ gradient, align, savedGradients, setSavedGradients }) => {
               </div>
             </div>
           )}
-
-          {/* <div
-            onClick={() => saveGradient(gradient.id)}
-            className="w-10 overflow-hidden flex items-center justify-center rounded-md ml-1 bg-white z-1 dark:border-[#777] dark:bg-[#222] z-[3]"
-          >
-            <Tooltip title="Save Gradient">
-              <Button className="btn">
-                <div className="w-full h-9 flex items-center justify-center overflow-hidden">
-                  {isBookMarked ? (
-                    <BsBookmarkCheck className="text-[1.3rem] text-[#ffdd00]" />
-                  ) : (
-                    <BsBookmarkPlus className="text-[1.3rem] dark:text-[#fafafa]" />
-                  )}
-                </div>
-              </Button>
-            </Tooltip>
-          </div> */}
         </div>
       </Link>
       <div

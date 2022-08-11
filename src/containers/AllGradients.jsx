@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { CategoryBanner, Loading, GradientifyBanner } from "../components";
 import { useGlobalContext } from "../context/Context";
-// import { gradients } from "../utility/gradients";
 import { Gradient } from "../containers";
 import { useOutletContext } from "react-router-dom";
 
@@ -12,10 +11,6 @@ const AllGradients = ({ savedGradients, setSavedGradients }) => {
   const { gradients, loading } = useGradient();
 
   const [searchTerm] = useOutletContext();
-
-  // if (loading) {
-  //   return <Loading />;
-  // }
 
   //   map method to be applied on gradients array while displaying
 

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Link, Outlet } from "react-router-dom";
-import { YtVideo } from "./";
 import banner from "../assets/banner.png";
 import { BsFillPlayFill, BsLightning } from "react-icons/bs";
 import Parallax from "parallax-js";
@@ -32,9 +31,7 @@ const Hero = () => {
   return (
     <>
       <div className="bg-hero4 bg-cover bg-no-repeat bg-center">
-        {/* <div className="hero-container4"> */}
         <div className="flex flex-col md:flex-row px-[25px] md:px-[40px] py-[30px] md:py-[60px] h-auto min-h-[95vh] overflow-hidden transition duration-300">
-          <YtVideo open={showYt} setOpen={setShowYt} />
           <div className="flex flex-1 justify-center items-start flex-col md:mr-[20px]">
             <h1 className="font-Epilogue text-[36px] md:text-[46px] lg:text-[54px] leading-[1.1] md:leading-[1.25] font-extrabold text-black">
               Find the Perfect gradient for your next projects

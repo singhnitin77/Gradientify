@@ -1,6 +1,4 @@
 import React, { useState, useEffect, useRef } from "react";
-import arrow from "../assets/arrow.svg";
-import radial from "../assets/radial.svg";
 import chroma from "chroma-js";
 import { Tooltip } from "@mui/material";
 import { FaArrowUp } from "react-icons/fa";
@@ -210,7 +208,6 @@ const Gradientgenerator = () => {
 
         <div className="box md:w-[640px] w-[350px] h-auto mx-auto break-all mt-4 p-2">
           <p className="p-3 text-gray-200 font-Epilogue text-base md:text-[16px] text-center font-regular">
-            {/* <span className="text-gray-100">background-image: </span>  */}
             {CSS}
           </p>
         </div>

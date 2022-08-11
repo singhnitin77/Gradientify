@@ -47,8 +47,6 @@ const SingleColor = ({ rgb, weight, index, hexColor }) => {
           }`}
         />
       </div>
-      {/* {alert && <p className="alert">Copied to Clipboard</p>} */}
-      {/* {alert && toast.success("Copied to clipboard!")} */}
     </article>
   );
 };

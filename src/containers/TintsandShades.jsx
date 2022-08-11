@@ -109,25 +109,3 @@ const TintsandShades = () => {
 };
 
 export default TintsandShades;
-
-{
-  /* <div className="w-full p-[2px] bg-app-gradient-2 mt-4 rounded-md">
-  <form
-    action=""
-    className="bg-[#0a0719] flex duration-500 focus:border-[#3d5eff] pl-3 rounded-lg p-1 w-full items-center justify-between"
-  >
-    <input
-      type="text"
-      placeholder="bhatinitin04@gmail.com"
-      className="h-full py-1 pl-1 w-full bg-transparent font-Epilogue placeholder:font-Epilogue text-white text-sm lg:text-base focus:outline-none appearance-none"
-    />
-    <div className="bg-[#764dff] p-2 lg:p-3 cursor:pointer shine rounded-lg text-sm lg:text-base">
-      <FiSend
-        className="text-white -ml-1"
-        style={{ transform: "rotate(45deg" }}
-      />
-    </div>
-  </form>
-</div>;
- */
-}

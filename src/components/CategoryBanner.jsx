@@ -1,5 +1,4 @@
 import React from "react";
-import { SingleCategory } from ".";
 import { Link } from "react-router-dom";
 
 const CategoryBanner = () => {

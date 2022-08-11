@@ -510,8 +510,8 @@ input.error {
 }
 
 .modal__content {
-  width: 800px;
-  height: 500px;
+  //width: 800px;
+  //height: 500px;
   border-radius: 12px;
   background: transparent;
   color: #000;

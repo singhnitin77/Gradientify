@@ -36,10 +36,13 @@ import { Loading } from "../components";
 import { useGlobalContext } from "../context/Context";
 import { useGradient } from "../context/GradientContext";
 // import { gradients } from "../utility/gradients";
+import { useAnalyticsEventTracker } from "../components";
 
 const IndividualGradientPage = ({ savedGradients, setSavedGradients }) => {
   const { align, rotate } = useGlobalContext();
   const { gradients, loading } = useGradient();
+
+  const gaEventTracker = useAnalyticsEventTracker("Individual Gradient Page");
 
   // const [gradient, setGradient] = useState([]);
 
@@ -157,16 +160,16 @@ const IndividualGradientPage = ({ savedGradients, setSavedGradients }) => {
           <div className="opacity-0 w-[0] h-[0] overflow-auto">
             <ComponentToPrint ref={componentRef} />
           </div>
-          <div className="h-full lg:h-[87vh] mt-[44px] w-full flex items-center justify-center">
+          <div className="h-full lg:h-[87vh] w-full flex items-center justify-center">
             <div
               // style={{
               //   background: `linear-gradient(to ${align}, ${gradient.colors[0]}, ${gradient.colors[1]})`,
               // }}
               style={{ background: `${background}` }}
-              className="w-11/12 lg:w-[85%] h-[50vh] lg:h-[85%] flex items-center justify-center rounded-md gradient-shadow py-10 lg:py-0"
+              className="w-full lg:w-[100%] h-[50vh] lg:h-[100%] flex items-center justify-center py-10 lg:py-0"
             ></div>
           </div>
-          <div className="py-8 rounded-md w-11/12 lg:w-8/12 mx-auto mb-[44px] flex items-start justify-center flex-col px-6 bg-white gradient-shadow dark:bg-[#333] border dark:border-[#444]">
+          <div className="py-8 rounded-md mt-[20px] w-11/12 lg:w-8/12 mx-auto mb-[44px] flex items-start justify-center flex-col px-6 bg-white gradient-shadow dark:bg-[#333] border dark:border-[#444]">
             <div className="flex items-center gap-3 mb-[12px]">
               <Tooltip title={`Copy ${gradient.colors[0]}`}>
                 <div
@@ -205,7 +208,10 @@ const IndividualGradientPage = ({ savedGradients, setSavedGradients }) => {
             </div>
 
             <div className="flex items-center flex-wrap gap-5 mt-[24px]">
-              <Tooltip title="Copy CSS">
+              <Tooltip
+                title="Copy CSS"
+                onClick={() => gaEventTracker("Copy CSS")}
+              >
                 <div
                   onClick={copyCSS}
                   className="overflow-hidden cursor-pointer flex items-center justify-center transition duration-300 dark:text-white"
@@ -218,7 +224,10 @@ const IndividualGradientPage = ({ savedGradients, setSavedGradients }) => {
                 </div>
               </Tooltip>
 
-              <Tooltip title="Copy Text CSS">
+              <Tooltip
+                title="Copy Text CSS"
+                onClick={() => gaEventTracker("Copy Text CSS")}
+              >
                 <div
                   onClick={copytextCSS}
                   className="overflow-hidden cursor-pointer flex items-center justify-center transition duration-300 dark:text-white"
@@ -231,7 +240,10 @@ const IndividualGradientPage = ({ savedGradients, setSavedGradients }) => {
                 </div>
               </Tooltip>
 
-              <Tooltip title="Rotate Gradient">
+              <Tooltip
+                title="Rotate Gradient"
+                onClick={() => gaEventTracker("Rotate Gradient Btn")}
+              >
                 <div
                   onClick={rotate}
                   className="overflow-hidden cursor-pointer flex items-center justify-center transition duration-300 dark:text-white"
@@ -244,7 +256,10 @@ const IndividualGradientPage = ({ savedGradients, setSavedGradients }) => {
                 </div>
               </Tooltip>
 
-              <Tooltip title="Save Gradient">
+              <Tooltip
+                title="Save Gradient"
+                onClick={() => gaEventTracker("Save Gradient Btn")}
+              >
                 <div
                   className="overflow-hidden cursor-pointer flex items-center justify-center rounded-md border border-[#eee] bg-gray-100 transition duration-500 hover:bg-gray-200 dark:border-[#555] dark:bg-[#181718]"
                   onClick={saveGradient}
@@ -269,7 +284,10 @@ const IndividualGradientPage = ({ savedGradients, setSavedGradients }) => {
                 </div>
               </Tooltip>
 
-              <Tooltip title="Download Gradient">
+              <Tooltip
+                title="Download Gradient"
+                onClick={() => gaEventTracker("Download Gradient PNG")}
+              >
                 <div
                   onClick={() =>
                     exportComponentAsPNG(componentRef, {

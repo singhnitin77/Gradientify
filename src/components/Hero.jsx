@@ -3,12 +3,14 @@ import { Link, Outlet } from "react-router-dom";
 import banner from "../assets/banner.png";
 import { BsFillPlayFill, BsLightning } from "react-icons/bs";
 import Parallax from "parallax-js";
-import { NavHeader } from "./";
+import { NavHeader, useAnalyticsEventTracker } from "./";
 import { AllGradients } from "../containers";
 import { IoCloseOutline } from "react-icons/io5";
 import { BiLoaderAlt } from "react-icons/bi";
 
 const Hero = () => {
+  const gaEventTracker = useAnalyticsEventTracker("Hero Section");
+
   const [showYt, setShowYt] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -46,6 +48,7 @@ const Hero = () => {
             <div>
               <a
                 href="#try-gradientify"
+                onClick={() => gaEventTracker("Try Now Btn")}
                 className="bg-[#F5BA31] hover:bg-[#f7c85a] text-[#191925] font-Epilogue text-[18px] shine font-bold outline-none cursor-pointer flex items-cener justify-center px-[20px] py-[12px] rounded-[28px]"
               >
                 Try Gradientify
@@ -67,7 +70,10 @@ const Hero = () => {
               </div>
 
               <button onClick={openModal} className="">
-                <div className="hero-container4 bg-cover rounded-[50%] bg-center p-4 absolute left-1/2 mx-auto top-1/2 transform -translate-x-1/2 -translate-y-1/2 duration-500 hover:scale-125 cursor-pointer border border-[#f5ba32]">
+                <div
+                  onClick={() => gaEventTracker("Teaser Button")}
+                  className="hero-container4 bg-cover rounded-[50%] bg-center p-4 absolute left-1/2 mx-auto top-1/2 transform -translate-x-1/2 -translate-y-1/2 duration-500 hover:scale-125 cursor-pointer border border-[#f5ba32]"
+                >
                   <BsFillPlayFill className="text-white text-3xl" />
                 </div>
                 {modal ? (

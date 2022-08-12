@@ -22,11 +22,14 @@ import { HiOutlineExternalLink } from "react-icons/hi";
 
 // Link react router
 import { Links } from "react-router-dom";
+import { useAnalyticsEventTracker } from "../components";
 
 const Gradient = ({ gradient, align, savedGradients, setSavedGradients }) => {
   const [showCopyBg, setShowCopyBg] = useState(false);
   const [showSaveBg, setShowSaveBg] = useState(false);
   const [isBookMarked, setIsBookMarked] = useState(false);
+
+  const gaEventTracker = useAnalyticsEventTracker("Gradient Card");
 
   //   css code
   const CSS = `background: ${gradient.colors[0]}; \nbackground: -webkit-linear-gradient(to ${align}, ${gradient.colors[0]}, ${gradient.colors[1]},${gradient.colors[2]}); \nbackground: linear-gradient(to ${align}, ${gradient.colors[0]}, ${gradient.colors[1]},${gradient.colors[2]}); `;
@@ -124,7 +127,10 @@ const Gradient = ({ gradient, align, savedGradients, setSavedGradients }) => {
       data-aos="fade-up"
       data-aos-duration="700"
     >
-      <Link to={`/gradient/${gradient.id}`}>
+      <Link
+        to={`/gradient/${gradient.id}`}
+        onClick={() => gaEventTracker("Single Gradient Page")}
+      >
         <div
           className="h-[220px] w-full rounded-t-[10px] flex items-start justify-end p-2 relative overflow-hidden"
           style={{ background: `${background}` }}
@@ -158,21 +164,32 @@ const Gradient = ({ gradient, align, savedGradients, setSavedGradients }) => {
 
       <div className="w-full flex items-center justify-between p-[18px]">
         <div className="flex items-center uppercase gap-x-2">
-          <Tooltip title={`Copy ${gradient.colors[0]}`}>
+          <Tooltip
+            title={`Copy ${gradient.colors[0]}`}
+            onClick={() => gaEventTracker("Copy Hex 1")}
+          >
             <div
               className="text-md font-medium w-[22px] h-[22px] rounded-[50%]"
               onClick={() => copySingleColor(gradient.colors[0])}
               style={{ background: `${gradient.colors[0]}` }}
             ></div>
           </Tooltip>
-          <Tooltip title={`Copy ${gradient.colors[1]}`}>
+
+          <Tooltip
+            title={`Copy ${gradient.colors[1]}`}
+            onClick={() => gaEventTracker("Copy Hex 2")}
+          >
             <div
               className="text-md font-medium w-[22px] h-[22px] rounded-[50%]"
               onClick={() => copySingleColor(gradient.colors[1])}
               style={{ background: `${gradient.colors[1]}` }}
             ></div>
           </Tooltip>
-          <Tooltip title={`Copy ${gradient.colors[2]}`}>
+
+          <Tooltip
+            title={`Copy ${gradient.colors[2]}`}
+            onClick={() => gaEventTracker("Copy Hex 3")}
+          >
             <div
               className="text-md font-medium w-[22px] h-[22px] rounded-[50%]"
               onClick={() => copySingleColor(gradient.colors[2])}
@@ -182,7 +199,7 @@ const Gradient = ({ gradient, align, savedGradients, setSavedGradients }) => {
         </div>
 
         <div className="flex items-center">
-          <Tooltip title="Copy CSS">
+          <Tooltip title="Copy CSS" onClick={() => gaEventTracker("Copy CSS")}>
             <div
               onClick={copyCSS}
               className="overflow-hidden flex items-center justify-center transition duration-300 dark:text-white"
@@ -195,7 +212,10 @@ const Gradient = ({ gradient, align, savedGradients, setSavedGradients }) => {
             </div>
           </Tooltip>
 
-          <Tooltip title="Copy Text CSS">
+          <Tooltip
+            title="Copy Text CSS"
+            onClick={() => gaEventTracker("Copy Text CSS")}
+          >
             <div
               onClick={copytextCSS}
               className="overflow-hidden ml-3 flex items-center justify-center transition duration-300 dark:text-white"

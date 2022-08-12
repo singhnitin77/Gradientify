@@ -12,3 +12,4 @@ export { default as FeatureCard } from "./FeatureCard";
 export { default as SingleColor } from "./SingleColor";
 export { default as CategoryBanner } from "./CategoryBanner";
 export { default as SingleCategory } from "./SingleCategory";
+export { default as useAnalyticsEventTracker } from "./useAnalyticsEventTracker";

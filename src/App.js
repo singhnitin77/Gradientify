@@ -6,6 +6,7 @@ import { Navbar, ScrollToTop, Hero } from "./components";
 import { Toaster } from "react-hot-toast";
 import { useGlobalContext } from "../src/context/Context";
 import useLocalStorage from "./utility/useLocalStorage";
+
 import {
   About,
   Contributors,
@@ -19,12 +20,16 @@ import {
   NewGradient,
   Category,
 } from "./containers";
+
 // aos
 import Aos from "aos";
 import "aos/dist/aos.css";
 
 // animate.css
 import "animate.css";
+import ReactGA from "react-ga";
+const TRACKING_ID = "UA-237327019-1"; // OUR_TRACKING_ID
+ReactGA.initialize(TRACKING_ID);
 
 const App = () => {
   const { darkMode } = useGlobalContext();
@@ -33,6 +38,9 @@ const App = () => {
   const [savedGradients, setSavedGradients] = useLocalStorage("saved", []);
 
   // Google Analytics
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, []);
 
   Aos.init();
   return (

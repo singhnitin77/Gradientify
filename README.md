@@ -25,7 +25,7 @@ Gradientify is a web-based all-in-one gradient editor that gives you access to 1
 [Read Blog](https://thenitinsingh.hashnode.dev/gradientify)
 
 <a href="https://www.gradientify.com/">
-<img src="public/readme/100-gradients.gif" width="1200"/>
+<img src="public/readme/100-gradients.gif"/>
 </a>
 
 <a href="https://www.gradientify.com/">

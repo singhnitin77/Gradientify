@@ -21,7 +21,10 @@ const GradientifyBanner = () => {
           Download PNGs, Dark mode and many features.
         </p>
         <div className="flex flex-wrap flex-col items-center justify-center md:flex-row animate__animated animate__fadeInUp">
-          <a href="https://hashnode.com/@nitinsingh" target="_blank">
+          <a
+            href="https://thenitinsingh.hashnode.dev/gradientify"
+            target="_blank"
+          >
             <button className="shine bg-[#f5ba31] px-3 py-2 text-base capitalize rounded-md font-semibold flex items-center justify-center text-[#201c4e]]">
               <FiBookOpen className="text-lg mr-1" />
               <span>Read Blog</span>

@@ -87,7 +87,7 @@ const Newsletter = () => {
               </button>
             </form>
           </div>
-          <h3 className="bg-text-gradient font-semibold mb-2 uppercase mt-2 tracking-wider text-sm lg:text-base">
+          <h3 className="text-gradient-1 font-semibold mb-2 uppercase mt-2 tracking-wider text-sm lg:text-base">
             We don’t spam, only updates & new products!
           </h3>
         </div>

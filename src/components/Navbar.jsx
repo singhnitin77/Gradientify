@@ -32,25 +32,25 @@ const Navbar = () => {
         </Link> */}
 
           <Link to="/tints-shades">
-            <p className="text-[16px] text-white font-medium font-Epilogue">
+            <p className="text-[16px] text-white continuous-line font-medium font-Epilogue">
               Tints & Shades
             </p>
           </Link>
 
           <Link to="/gradient-generator">
-            <p className="text-[16px] font-medium font-Epilogue text-white">
+            <p className="text-[16px] font-medium continuous-line font-Epilogue text-white">
               Gradient Generator
             </p>
           </Link>
 
           <Link to="/features">
-            <p className="text-[16px] font-medium font-Epilogue text-white">
+            <p className="text-[16px] font-medium continuous-line font-Epilogue text-white">
               Features
             </p>
           </Link>
 
           <Link to="/about">
-            <p className="text-[16px] font-medium font-Epilogue text-white">
+            <p className="text-[16px] font-medium continuous-line font-Epilogue text-white">
               About
             </p>
           </Link>
@@ -61,7 +61,7 @@ const Navbar = () => {
             href={twtlink}
             target="_blank"
             rel="noreferrer"
-            className="text-[17px] font-medium lg:flex hidden font-Epilogue text-white"
+            className="text-[17px] font-medium lg:flex hidden continuous-line font-Epilogue text-white"
           >
             Share to Twitter
           </a>

@@ -85,7 +85,7 @@ const Gradient = ({ gradient, align, savedGradients, setSavedGradients }) => {
       setSavedGradients([
         ...savedGradients,
         {
-          id: gradient.id,
+          id: parseInt(gradient.id),
           colors: gradient.colors,
         },
       ]);
@@ -102,7 +102,10 @@ const Gradient = ({ gradient, align, savedGradients, setSavedGradients }) => {
   //   Fetching saved gradient
   const fetchSavedGradients = () => {
     if (
-      savedGradients.some((savedGradients) => savedGradients.id === gradient.id)
+      savedGradients.some(
+        (savedGradients) =>
+          parseInt(savedGradients.id) === parseInt(gradient.id)
+      )
     ) {
       setIsBookMarked(true);
     } else {

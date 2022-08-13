@@ -124,7 +124,9 @@ const IndividualGradientPage = ({ savedGradients, setSavedGradients }) => {
   const saveGradient = () => {
     if (isBookMarked) {
       setSavedGradients(
-        savedGradients.filter((savedGradient) => savedGradient.id !== id)
+        savedGradients.filter(
+          (savedGradient) => parseInt(savedGradient.id) !== parseInt(id)
+        )
       );
       // toast
       toast.success("Removed Gradient from Saved!");
@@ -132,7 +134,7 @@ const IndividualGradientPage = ({ savedGradients, setSavedGradients }) => {
       setSavedGradients([
         ...savedGradients,
         {
-          id: id,
+          id: parseInt(id),
           colors: gradient.colors,
         },
       ]);
@@ -141,17 +143,24 @@ const IndividualGradientPage = ({ savedGradients, setSavedGradients }) => {
     }
   };
 
-  const fetchSavedGradients = () => {
-    if (savedGradients.some((savedGradient) => savedGradient.id === id)) {
+  // const fetchSavedGradients = () => {
+  //   if (savedGradients.find((savedGradient) => savedGradient.id === id)) {
+  //     setIsBookMarked(true);
+  //   } else {
+  //     setIsBookMarked(false);
+  //   }
+  // };
+
+  useEffect(() => {
+    let arr = savedGradients.filter(
+      (savedGradient) => parseInt(savedGradient.id) === parseInt(id)
+    );
+    if (arr.length > 0) {
       setIsBookMarked(true);
     } else {
       setIsBookMarked(false);
     }
-  };
-
-  useEffect(() => {
-    fetchSavedGradients();
-  });
+  }, [id, savedGradients]);
 
   return (
     <div>
@@ -266,7 +275,7 @@ const IndividualGradientPage = ({ savedGradients, setSavedGradients }) => {
                 >
                   <div className="w-40 h-9 flex items-center justify-center overflow-hidden">
                     {isBookMarked ? (
-                      <BsBookmarkCheck className="text-[1.3rem] text-[#fec821]]" />
+                      <BsBookmarkCheck className="text-[1.3rem] text-[#fec821]" />
                     ) : (
                       <BsBookmarkPlus className="text-[1.3rem] dark:text-[#fafafa]" />
                     )}

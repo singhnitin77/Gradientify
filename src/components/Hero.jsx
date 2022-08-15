@@ -53,24 +53,25 @@ const Hero = () => {
               >
                 Try Gradientify
               </a>
-              {/* <a
-                href="https://www.producthunt.com/posts/gradientify?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-gradientify"
-                target="_blank"
-              >
-                <img
-                  src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=355830&theme=light"
-                  alt="Gradientify - Product Hunt"
-                  // className="w-[250px] h-[50px]"
-                  style={{ width: "250px", height: "50px" }}
-                />
-              </a> */}
 
+              {/* 
               <a
                 href="https://www.producthunt.com/posts/gradientify?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-gradientify"
                 target="_blank"
               >
                 <img
                   src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=355830&theme=neutral"
+                  alt="Gradientify - Product Hunt"
+                  // className="w-[250px] h-[50px]"
+                  style={{ width: "250px", height: "50px" }}
+                />
+              </a> */}
+              <a
+                href="https://www.producthunt.com/products/gradientify?utm_source=badge-top-post-badge&utm_medium=badge&utm_souce=badge-gradientify"
+                target="_blank"
+              >
+                <img
+                  src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=355830&theme=dark&period=daily"
                   alt="Gradientify - Product Hunt"
                   // className="w-[250px] h-[50px]"
                   style={{ width: "250px", height: "50px" }}

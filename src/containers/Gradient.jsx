@@ -30,16 +30,51 @@ const Gradient = ({ gradient, align, savedGradients, setSavedGradients }) => {
   const [isBookMarked, setIsBookMarked] = useState(false);
 
   const gaEventTracker = useAnalyticsEventTracker("Gradient Card");
+  // const [gradient, setGradient] = useState();
+  const [CSS, setCSS] = useState("");
+  const [textCSS, setTextCSS] = useState("");
+  const [background, setBackground] = useState("");
+
+  //filtering gradient and producing css
+  useEffect(() => {
+    let val = gradient;
+    // setGradient(val);
+    if (val) {
+      //   css code
+      const cssVal = val.colors[2]
+        ? `background: ${val.colors[0]}; \nbackground: -webkit-linear-gradient(to ${align}, ${val.colors[0]}, ${val.colors[1]},${val.colors[2]}); \nbackground: linear-gradient(to ${align}, ${val.colors[0]}, ${val.colors[1]},${val.colors[2]}); `
+        : `background: ${val.colors[0]}; \nbackground: -webkit-linear-gradient(to ${align}, ${val.colors[0]}, ${val.colors[1]}); \nbackground: linear-gradient(to ${align}, ${val.colors[0]}, ${val.colors[1]});`;
+
+      let textCSSVal = val.colors[2]
+        ? `background: -webkit-linear-gradient(to ${align}, ${val.colors[0]}, ${val.colors[1]},${val.colors[2]});  
+      background: linear-gradient(to ${align}, ${val.colors[0]}, ${val.colors[1]},${val.colors[2]});
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;`
+        : `background: -webkit-linear-gradient(to ${align}, ${val.colors[0]}, ${val.colors[1]});  
+      background: linear-gradient(to ${align}, ${val.colors[0]}, ${val.colors[1]});
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;`;
+      setCSS(cssVal);
+      setTextCSS(textCSSVal);
+      let backgroundVal;
+      if (val.colors.length > 2) {
+        backgroundVal = `linear-gradient(to ${align}, ${val.colors[0]}, ${val.colors[1]},${val.colors[2]})`;
+      } else {
+        backgroundVal = `linear-gradient(to ${align}, ${val.colors[0]}, ${val.colors[1]})`;
+      }
+      setBackground(backgroundVal);
+    }
+  }, [gradient, align]);
 
   //   css code
-  const CSS = `background: ${gradient.colors[0]}; \nbackground: -webkit-linear-gradient(to ${align}, ${gradient.colors[0]}, ${gradient.colors[1]},${gradient.colors[2]}); \nbackground: linear-gradient(to ${align}, ${gradient.colors[0]}, ${gradient.colors[1]},${gradient.colors[2]}); `;
+  // const CSS = `background: ${gradient.colors[0]}; \nbackground: -webkit-linear-gradient(to ${align}, ${gradient.colors[0]}, ${gradient.colors[1]},${gradient.colors[2]}); \nbackground: linear-gradient(to ${align}, ${gradient.colors[0]}, ${gradient.colors[1]},${gradient.colors[2]}); `;
 
-  let textCSS =
-    gradient.colors &&
-    `background: -webkit-linear-gradient(to ${align}, ${gradient.colors[0]}, ${gradient.colors[1]},${gradient.colors[2]});  
-     background: linear-gradient(to ${align}, ${gradient.colors[0]}, ${gradient.colors[1]},${gradient.colors[2]});
-     -webkit-background-clip: text;
-     -webkit-text-fill-color: transparent;`;
+  // let textCSS =
+  //   gradient.colors &&
+  //   `background: -webkit-linear-gradient(to ${align}, ${gradient.colors[0]}, ${gradient.colors[1]},${gradient.colors[2]});
+  //    background: linear-gradient(to ${align}, ${gradient.colors[0]}, ${gradient.colors[1]},${gradient.colors[2]});
+  //    -webkit-background-clip: text;
+  //    -webkit-text-fill-color: transparent;`;
 
   const copytextCSS = () => {
     navigator.clipboard.writeText(textCSS);
@@ -117,12 +152,12 @@ const Gradient = ({ gradient, align, savedGradients, setSavedGradients }) => {
     fetchSavedGradients();
   });
 
-  let background;
-  if (gradient.colors.length > 2) {
-    background = `linear-gradient(to ${align}, ${gradient.colors[0]}, ${gradient.colors[1]},${gradient.colors[2]})`;
-  } else {
-    background = `linear-gradient(to ${align}, ${gradient.colors[0]}, ${gradient.colors[1]})`;
-  }
+  // let background;
+  // if (gradient.colors.length > 2) {
+  //   background = `linear-gradient(to ${align}, ${gradient.colors[0]}, ${gradient.colors[1]},${gradient.colors[2]})`;
+  // } else {
+  //   background = `linear-gradient(to ${align}, ${gradient.colors[0]}, ${gradient.colors[1]})`;
+  // }
 
   return (
     <div

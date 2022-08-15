@@ -45,13 +45,36 @@ const Hero = () => {
               nice color gradient, and easily makes tints and shades of a single
               color.
             </p>
-            <div>
+            <div className="flex md:flex-row flex-col gap-[10px] items-start">
               <a
                 href="#try-gradientify"
                 onClick={() => gaEventTracker("Try Now Btn")}
-                className="bg-[#F5BA31] hover:bg-[#f7c85a] text-[#191925] font-Epilogue text-[18px] shine font-bold outline-none cursor-pointer flex items-cener justify-center px-[20px] py-[12px] rounded-[28px]"
+                className="bg-[#F5BA31] hover:bg-[#f7c85a] text-[#191925] font-Epilogue text-[18px] shine font-bold outline-none cursor-pointer flex items-cener justify-center px-[20px] py-[12px] rounded-[26px]"
               >
                 Try Gradientify
+              </a>
+              {/* <a
+                href="https://www.producthunt.com/posts/gradientify?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-gradientify"
+                target="_blank"
+              >
+                <img
+                  src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=355830&theme=light"
+                  alt="Gradientify - Product Hunt"
+                  // className="w-[250px] h-[50px]"
+                  style={{ width: "250px", height: "50px" }}
+                />
+              </a> */}
+
+              <a
+                href="https://www.producthunt.com/posts/gradientify?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-gradientify"
+                target="_blank"
+              >
+                <img
+                  src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=355830&theme=neutral"
+                  alt="Gradientify - Product Hunt"
+                  // className="w-[250px] h-[50px]"
+                  style={{ width: "250px", height: "50px" }}
+                />
               </a>
             </div>
           </div>

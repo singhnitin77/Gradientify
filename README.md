@@ -13,10 +13,9 @@
 <h3 align="center">Find the perfect gradient for your next projects</h3>
 
 <p align="center">
-<a href="https://twitter.com/intent/tweet?text=Checkout%20desigerslobby.com%20by%20@thenitinsingh7%0A%0AWorld's%20biggest%20collection%20of%20Best%20design%20resources%20and%20tools%20all%20in%20one%20place,%20with%20amazing%20features.%20This%20is%20something%20you%20don't%20want%20to%20miss!">
-<img src="https://img.shields.io/twitter/url?label=Share%20on%20Twitter&style=social&url=https%3A%2F%2Fgithub.com%2Fsingnitin77%2FDesignersLobby"/>
-</a>
+<a href="https://www.producthunt.com/products/gradientify?utm_source=badge-top-post-badge&utm_medium=badge&utm_souce=badge-gradientify" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=355830&theme=light&period=daily" alt="Gradientify - Find&#0032;the&#0032;perfect&#0032;gradient&#0032;for&#0032;your&#0032;next&#0032;projects&#0046; | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
 </p>
+
 
 ### Introducing Gradientify
 

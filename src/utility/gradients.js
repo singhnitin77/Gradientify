@@ -518,4 +518,44 @@ export const gradients = [
     colors: ["#b6f3c9", "#4766f4"],
     id: 104,
   },
+
+  {
+    colors: ["#380036", "#0cbaba"],
+    id: 105,
+  },
+
+  {
+    colors: ["#0d324d", "#7f5a83"],
+    id: 106,
+  },
+
+  {
+    colors: ["#29524a", "#e9bcb7"],
+    id: 107,
+  },
+
+  {
+    colors: ["#fc575e", "#90D5ec"],
+    id: 108,
+  },
+
+  {
+    colors: ["#f5f7fa", "#b8C6db"],
+    id: 109,
+  },
+
+  {
+    colors: ["#09203f", "#537895"],
+    id: 110,
+  },
+
+  {
+    colors: ["#a5C787", "#5D4257"],
+    id: 111,
+  },
+  
+  {
+    colors: ["#d1bdd2", "#2884b8"],
+    id: 112,
+  }
 ];

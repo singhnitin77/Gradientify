@@ -18,7 +18,6 @@ import {
   IndividualGradientPage,
   SavedGradients,
   NewGradient,
-  Category,
 } from "./containers";
 
 // aos

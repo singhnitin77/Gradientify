@@ -1,11 +1,11 @@
 import React from "react";
 
 // code editor components
-// import "codemirror/lib/codemirror.css";
-// import "codemirror/theme/material-palenight.css";
-// import "codemirror/mode/xml/xml";
-// import "codemirror/mode/javascript/javascript";
-// import "codemirror/mode/css/css";
+import "codemirror/lib/codemirror.css";
+import "codemirror/theme/material-palenight.css";
+import "codemirror/mode/xml/xml";
+import "codemirror/mode/javascript/javascript";
+import "codemirror/mode/css/css";
 import { Controlled as CodeMirror } from "react-codemirror2";
 
 const NewGradient = () => {

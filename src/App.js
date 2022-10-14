@@ -72,7 +72,7 @@ const App = () => {
             <Route path="/add-new-gradient" element={<NewGradient />} />
           </Route>
 
-          <Route
+          {/* <Route
             path="/category/:id"
             element={
               <Category
@@ -80,7 +80,7 @@ const App = () => {
                 setSavedGradients={setSavedGradients}
               />
             }
-          />
+          /> */}
           <Route
             path="/gradient/:id"
             element={

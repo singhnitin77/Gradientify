@@ -563,10 +563,7 @@ export const gradients = [
     colors: ["#051937", "#004873","#00b5ad"],
     id: 113,
   },
-  {
-    colors: ["#faf7f0", "#b1AFFF","#ff628"],
-    id: 114,
-  },
+  
   {
     colors: ["#9e7676", "#815B5B","#594545"],
     id: 115,

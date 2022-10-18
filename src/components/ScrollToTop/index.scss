@@ -1,0 +1,13 @@
+.scroll_top{
+    position: fixed;
+    bottom: 20px;
+    right: 10px;
+    font-size: 37px;
+    z-index: 5;
+    &__button{
+        width: 100%;
+        height: 100%;
+    }
+}
+  
+

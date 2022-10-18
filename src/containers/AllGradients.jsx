@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { CategoryBanner, Loading, GradientifyBanner } from "../components";
+import { CategoryBanner, Loading, GradientifyBanner, ScrollToTop } from "../components";
 import { useGlobalContext } from "../context/Context";
 import { Gradient } from "../containers";
 import { useOutletContext } from "react-router-dom";
@@ -16,6 +16,7 @@ const AllGradients = ({ savedGradients, setSavedGradients }) => {
 
   return (
     <>
+      <ScrollToTop/>
       <div
         id="try-gradientify"
         className="px-[30px] md:px-[72px] lg:px-[80px] py-[72px] md:py-[80px] lg:py-[92px] w-full bg-[#F5F9FF] dark:bg-[#333333] overflow-x-hidden"

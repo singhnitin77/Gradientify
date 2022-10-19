@@ -2,7 +2,7 @@ import "./App.css";
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ReactDOM from "react-dom";
-import { Navbar, ScrollToTop, Hero } from "./components";
+import { Navbar, ScrollToTop, Hero, ErrorPage } from "./components";
 import { Toaster } from "react-hot-toast";
 import { useGlobalContext } from "../src/context/Context";
 import useLocalStorage from "./utility/useLocalStorage";
@@ -95,6 +95,7 @@ const App = () => {
           <Route path="/contributors" element={<Contributors />} />
           <Route path="/about" element={<About />} />
           <Route path="/features" element={<Features />} />
+          <Route path="*" element={<ErrorPage/>} />
         </Routes>
         <Footer />
       </Router>

@@ -2,7 +2,7 @@ export { default as Navbar } from "./Navbar";
 export { default as Hero } from "./Hero";
 export { default as CoffeeButton } from "./CoffeeButton";
 export { default as ContributeCard } from "./ContributeCard";
-export { default as ErrorPage } from "./ErrorPage";
+export { default as ErrorPage } from "./ErrorPage/ErrorPage";
 export { default as GradientifyBanner } from "./GradientifyBanner";
 export { default as TwtBtn } from "./TwtBtn";
 export { default as ScrollToTop } from "./ScrollToTop/ScrollToTop";

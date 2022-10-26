@@ -48,12 +48,10 @@
     linear-gradient(126.95deg, #ffffff 0%, #00273d 49.48%),
     radial-gradient(100% 216.55% at 100% 100%, #a4be00 0%, #6100ff 100%),
     linear-gradient(307.27deg, #1dac92 0.37%, #2800c6 100%),
-    radial-gradient(
-      100% 140% at 100% 0%,
+    radial-gradient(100% 140% at 100% 0%,
 
       #006c7a 57.29%,
-      #2200aa 100%
-    );
+      #2200aa 100%);
   background-blend-mode: overlay, overlay, difference, difference, normal;
 }
 
@@ -64,12 +62,10 @@
 }
 
 .text-gradient-1 {
-  background: linear-gradient(
-    287.43deg,
-    #774dff 33.27%,
-    #239eb9 61.72%,
-    #d73e87 82.93%
-  );
+  background: linear-gradient(287.43deg,
+      #774dff 33.27%,
+      #239eb9 61.72%,
+      #d73e87 82.93%);
   -webkit-background-clip: text !important;
   background-size: cover;
   -webkit-text-fill-color: transparent;
@@ -173,15 +169,13 @@
   text-align: center;
 }
 
-.spinner > div {
+.spinner>div {
   width: 20px;
   height: 20px;
-  background: linear-gradient(
-    287.43deg,
-    #764dff 33.27%,
-    #239eb9 61.72%,
-    #d73e87 82.93%
-  );
+  background: linear-gradient(287.43deg,
+      #764dff 33.27%,
+      #239eb9 61.72%,
+      #d73e87 82.93%);
   margin: 0 10px;
   border-radius: 100%;
   display: inline-block;
@@ -200,23 +194,27 @@
 }
 
 @-webkit-keyframes sk-bouncedelay {
+
   0%,
   80%,
   100% {
     -webkit-transform: scale(0);
   }
+
   40% {
     -webkit-transform: scale(1);
   }
 }
 
 @keyframes sk-bouncedelay {
+
   0%,
   80%,
   100% {
     -webkit-transform: scale(0);
     transform: scale(0);
   }
+
   40% {
     -webkit-transform: scale(1);
     transform: scale(1);
@@ -258,12 +256,10 @@
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background-image: linear-gradient(
-    -225deg,
-    #ff7402 0%,
-    #ffe700 50%,
-    #fff55e 100%
-  );
+  background-image: linear-gradient(-225deg,
+      #ff7402 0%,
+      #ffe700 50%,
+      #fff55e 100%);
 
   filter: blur(20px);
   z-index: -1;
@@ -310,16 +306,23 @@
 }
 
 .text-gradient-heading {
-  background: linear-gradient(
-    90.92deg,
-    #774dff 2.63%,
-    #239eb9 48.37%,
-    #d73e87 88.04%
-  );
+  background: linear-gradient(90.92deg,
+      #774dff 2.63%,
+      #239eb9 48.37%,
+      #d73e87 88.04%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
+  background-size: 300%;
+  background-position: -100%;
+  animation: animatehead 10s infinite alternate-reverse;
+}
+
+@keyframes animatehead {
+  to {
+    background-position: 100%;
+  }
 }
 
 input.error {
@@ -382,50 +385,40 @@ input.error {
 }
 
 .hero-container3 {
-  background: linear-gradient(
-      126.95deg,
+  background: linear-gradient(126.95deg,
       #91a2cd 0%,
       #008716 51.69%,
-      #ff9900 100%
-    ),
+      #ff9900 100%),
     linear-gradient(126.95deg, #ffffff 0%, #00273d 49.48%, #ff9900 100%),
     radial-gradient(100% 216.55% at 100% 100%, #a4be00 0%, #6100ff 100%),
     linear-gradient(307.27deg, #1dac92 0.37%, #2800c6 100%),
-    radial-gradient(
-      100% 140% at 100% 0%,
+    radial-gradient(100% 140% at 100% 0%,
       #eaff6b 0%,
       #006c7a 57.29%,
-      #2200aa 100%
-    );
+      #2200aa 100%);
   background-blend-mode: overlay, overlay, difference, difference, normal;
 }
 
 .hero-container4 {
-  background: linear-gradient(
-      126.95deg,
+  background: linear-gradient(126.95deg,
       #91a2cd 0%,
       #008716 51.69%,
-      #ff9900 100%
-    ),
+      #ff9900 100%),
     linear-gradient(126.95deg, #ffffff 0%, #00273d 49.48%),
     radial-gradient(100% 216.55% at 100% 100%, #a4be00 0%, #6100ff 100%),
     linear-gradient(307.27deg, #1dac92 0.37%, #2800c6 100%),
-    radial-gradient(
-      100% 140% at 100% 0%,
+    radial-gradient(100% 140% at 100% 0%,
       #eaff6b 0%,
       #006c7a 57.29%,
-      #2200aa 100%
-    );
+      #2200aa 100%);
   background-blend-mode: overlay, overlay, difference, difference, normal;
 }
 
 .bg-app-gradient-2 {
-  background: linear-gradient(
-    287.43deg,
-    #764dff 33.27%,
-    #239eb9 61.72%,
-    #d73e87 82.93%
-  );
+  background: linear-gradient(287.43deg,
+      #764dff 33.27%,
+      #239eb9 61.72%,
+      #d73e87 82.93%);
 }
 
 .absolute-center {
@@ -512,6 +505,7 @@ input.error {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
@@ -522,6 +516,7 @@ input.error {
     margin: 0rem 1rem;
     width: 100%;
   }
+
   .modal__video-style {
     width: 100%;
   }
@@ -532,9 +527,11 @@ input.error {
     background: transparent;
     height: auto;
   }
+
   .modal__video-align {
     bottom: 0px;
   }
+
   .modal__video-style {
     height: auto;
   }

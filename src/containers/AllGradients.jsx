@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { CategoryBanner, Loading, GradientifyBanner, ScrollToTop } from "../components";
+import {
+  CategoryBanner,
+  Loading,
+  GradientifyBanner,
+  ScrollToTop,
+} from "../components";
 import { useGlobalContext } from "../context/Context";
 import { Gradient } from "../containers";
 import { useOutletContext } from "react-router-dom";
@@ -16,12 +21,12 @@ const AllGradients = ({ savedGradients, setSavedGradients }) => {
 
   return (
     <>
-      <ScrollToTop/>
+      <ScrollToTop />
       <div
         id="try-gradientify"
         className="px-[30px] md:px-[72px] lg:px-[80px] py-[72px] md:py-[80px] lg:py-[92px] w-full bg-[#F5F9FF] dark:bg-[#333333] overflow-x-hidden"
       >
-        <h1 className="text-[28px] md:text-[36px] w-full font-bold font-Epilogue text-center leading-[1.3] mb-[54px] md:mb-[72px] text-gradient-heading mx-auto md:w-7/12">
+        <h1 className="class1 text-[28px] md:text-[36px] w-full font-bold font-Epilogue text-center leading-[1.3] mb-[54px] md:mb-[72px] text-gradient-heading mx-auto md:w-7/12">
           100+ Carefully Crafted Gradients ready to use in your next projects.
         </h1>
         {loading ? <Loading /> : null}

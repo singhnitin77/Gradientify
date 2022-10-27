@@ -465,8 +465,8 @@ input.error {
 }
 
 .modal__content {
-  //width: 800px;
-  //height: 500px;
+  /* width: 800px; */
+  /* height: 500px; */
   border-radius: 12px;
   background: transparent;
   color: #000;
@@ -538,4 +538,23 @@ input.error {
   .modal__video-style {
     height: auto;
   }
+}
+
+@keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.class1 {
+  background-size: 400% 400%;
+  animation: Gradient 8s ease infinite;
 }

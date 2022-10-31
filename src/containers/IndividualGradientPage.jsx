@@ -317,7 +317,7 @@ const IndividualGradientPage = ({ savedGradients, setSavedGradients }) => {
           </div>
 
           <h1
-            className="text-[60px] text-center font-black text-Epilogue text-gradient mb-[80px]"
+            className="text-[60px] class1 text-center font-black text-Epilogue text-gradient mb-[80px]"
             style={{
               backgroundImage: `${background}`,
             }}
